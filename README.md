@@ -26,7 +26,7 @@
 - 自分のおすすめの古着屋を紹介したいとき
 - 
 ## 設計書
-<...>
+
 
 ## 機能実装リスト
 https://docs.google.com/spreadsheets/d/1w75eN4xhjffYJVLtTgb0LzBYraU2w_3DhmhzfrJPM5I/edit?usp=sharing
