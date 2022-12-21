@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <h3><%= @post.name %></h3>
+    </div>
+    <div class="col-2">
+      <% if @post.user == current_user %>
+        <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <%= @post.address %>
+      <%= link_to "マップで見る",posts_map_path %>
+    </div>
+  </div>
+  <div class="row">
+    <% if @post.image.attached? %>
+      <% @post.image.each do |image| %>
+        <%= image_tag image, size: "200x200" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <%= @post.introduction %>
+    </div>
+    <div class="col-3">
+      <% @post.tags.each do |tag| %>
+        <span><%= tag.name %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

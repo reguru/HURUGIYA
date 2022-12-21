@@ -1,11 +1,19 @@
 # frozen_string_literal: true
 
 class Public::PasswordsController < Devise::PasswordsController
+  before_action :ensure_normal_enduser, only: :create
+  
+  def ensure_normal_enduser
+    if params[:enduser][:email].downcase == 'guest@example.com'
+      redirect_to new_user_session_path, alert: 'ゲストユーザーのパスワード再設定はできません。'
+    end
+  end
+  
   # GET /resource/password/new
   # def new
   #   super
   # end
-
+  
   # POST /resource/password
   # def create
   #   super
