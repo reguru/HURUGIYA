@@ -7,4 +7,8 @@ class Post < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   
   has_many_attached :image
+  
+  def self.looks(word)
+    @post = Post.where("name LIKE? OR introduction LIKE? OR address LIKE?","%#{word}%","%#{word}%","%#{word}%")
+  end
 end

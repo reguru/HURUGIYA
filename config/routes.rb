@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     get 'users/posts'=>'users#index'
     get 'users/quit'
     patch 'users/quit'=>'users#quit_update'
+    
+    get 'search' => 'searches#search'
 
     get 'posts/map'
 
