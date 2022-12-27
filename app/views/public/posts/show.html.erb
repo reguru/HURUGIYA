@@ -8,6 +8,22 @@
         <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
       <% end %>
     </div>
+    <div class="col-5"></div>
+    <div class="col-2">
+      <% if @post.favorited_by?(current_user) %>
+        <p>
+          <%= link_to post_favorites_path(@post), method: :delete do %>
+            <h3>♥<%= @post.favorites.count %></h3>
+          <% end %>
+        </p>
+      <% else %>
+        <p>
+          <%= link_to post_favorites_path(@post), method: :post do %>
+            <h3>♡<%= @post.favorites.count %></h3>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
   </div>
   <div class="row">
     <div class="col-8">
@@ -31,5 +47,26 @@
         <span><%= tag.name %></span>
       <% end %>
     </div>
+  </div>
+  <div class="row">
+    <%= form_with model: [@post, @comment] do |f| %>
+      <%= f.text_area :comment, placeholder:"コメントをここに" %>
+      <%= f.submit "送信する" ,class: "btn btn-success" %>
+    <% end %>
+  </div>
+  <div class="row">
+    <p>コメント(<%= @post.comments.count %>)</p>
+  </div>
+  <div class="row">
+    <% @post.comments.each do |comment| %>
+    <div class="mr-4 border">
+      <%= comment.user.name %>
+      <%= comment.created_at.strftime('%Y/%m/%d') %><br>
+      <%= comment.comment %>
+      <% if comment.user == current_user %>
+        <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+    <% end %>
   </div>
 </div>

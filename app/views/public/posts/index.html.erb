@@ -12,6 +12,7 @@
       新規登録
     <% end %>
   </div>
+  
   <% @posts.each do |posts| %>
   <div class="row mt-5 border">
     <div class="col-3">
@@ -23,6 +24,10 @@
       <%= posts.name %><br>
       <%= posts.address %><br>
       <%= posts.introduction %>
+    </div>
+    <div class="col-3">
+      <%= posts.favorites.count %><br>
+      <%= posts.comments.count %>
     </div>
   </div>
   <% end %>

@@ -1,0 +1,10 @@
+<h3>いいね一覧</h3>
+
+<% @favorite_posts.each do |post| %>
+  <%= link_to post_path(post.id) do %>
+    <%= post.name %>
+    <%= post.introduction %>
+    <%= image_tag post.image[0],size: "100x100" %>
+    <%= post.user.name %>
+  <% end %>
+<% end %>

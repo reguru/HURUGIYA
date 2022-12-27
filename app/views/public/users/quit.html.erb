@@ -1,1 +1,19 @@
-ユーザーの退会確認画面
+<div class="container">
+  <div class="text-center mt-5">
+    <h3>本当に退会しますか？</h3>
+  </div>
+  <div class="text-center mt-5">
+    <p>退会すると、マイページでの機能をすべて失います。</p>
+    <p>退会する場合は、「退会する」をクリックしてください。</p>
+  </div>
+  <div class="row mt-5">
+    <div class="col-4"></div>
+    <div class="col-2">
+      <%= link_to "退会しない",users_mypage_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-5">
+      <%= link_to "退会する",root_path, method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

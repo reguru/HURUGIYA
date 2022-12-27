@@ -26,10 +26,20 @@ Rails.application.routes.draw do
     get 'search' => 'searches#search'
 
     get 'posts/map'
+    
+    resources :users, only: [:new] do 
+      member do 
+        get :favorites
+      end
+    end
 
-    resources :posts,only:[:new,:create,:show,:edit,:index,:update,:destroy]
-    resources :favorites,only:[:create,:index]
-    resources :bookmarks,only:[:create,:index]
+    resources :posts,only:[:new,:create,:show,:edit,:index,:update,:destroy] do
+      resource :favorites,only:[:create,:destroy]
+      resource :bookmarks,only:[:create,:destroy]
+      resources :comments,only:[:create,:destroy]
+    end
+    
+    resources :bookmarks,only:[:index]
   end
 
   namespace :admin do

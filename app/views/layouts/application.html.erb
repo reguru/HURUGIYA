@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>HURUGIYA</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -43,7 +42,7 @@
                     <%= link_to "マイページ",users_mypage_path, class: 'nav-link text-white' %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "ログアウト",destroy_user_session_path, class: 'nav-link text-white' %>
+                    <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
                   </li>
                 <% else %>
                   <li class="nav-item">

@@ -1,1 +1,44 @@
-ユーザーマイページ
+<div class="container">
+  <div class="text-center m-5">
+    <h3>マイページ</h3>
+  </div>
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-2">
+        <%= image_tag @user.get_profile_image(100,100) %>
+      </div>
+      <div class="col-4">
+        <h5><%= @user.name %></h5><br>
+        <%= link_to "プロフィールを変更する", users_mypage_edit_path, class: 'btn btn-success' %>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <h5>ブックマーク一覧</h5>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <%= link_to "いいねした投稿", favorites_user_path(@user) %>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <%= link_to "自分の投稿",users_posts_path %>
+      </div>
+    </div>
+    <div class="text-center border-top mt-5">
+      <div class="mt-5">
+        <h6>退会希望の方は<%= link_to "こちら", users_quit_path %>をクリック</h6>
+      </div>
+    </div>
+  <% else %>
+    <div class="text-center">
+      <p>ログインをしましょう！</p>
+    </div>
+  <% end %>
+</div>
