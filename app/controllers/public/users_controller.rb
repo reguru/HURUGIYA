@@ -1,4 +1,5 @@
 class Public::UsersController < ApplicationController
+  before_action :authenticate_user!
   
   def show
     @user = current_user
@@ -19,7 +20,10 @@ class Public::UsersController < ApplicationController
   end
   
   def quit_update
-    
+    @user = current_user
+    @user.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
   
   def index

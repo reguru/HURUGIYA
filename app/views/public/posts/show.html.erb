@@ -29,8 +29,26 @@
     <div class="col-8">
       <%= @post.address %>
       <%= link_to "マップで見る",posts_map_path %>
+      <div class="map">
+        <div id="map" style="height:200px; width:300px;">
+        </div>
+      </div>
     </div>
   </div>
+  
+
+  <div type="text/javascript">
+    <script>
+      function initMap(){
+        let map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: <%= @post.latitude %>, lng: <%= @post.longitude %> },
+        zoom: 14
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+  </div>
+  
   <div class="row">
     <% if @post.image.attached? %>
       <% @post.image.each do |image| %>

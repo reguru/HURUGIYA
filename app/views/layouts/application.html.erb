@@ -15,47 +15,44 @@
       <div class="row">
         <div class="col-2">
           <sidebar>
-            <nav class="navbar navbar-expand-lg bg-dark my-auto ">
-              <ul class="nav flex-column">
-              <a class="navbar-brand text-white" href="/"><span>HURUGIYA</span></a>
+            <nav class="navbar navbar-expand-lg bg-dark flex-column" style="height:600px;">
+              <a class="navbar-brand text-white" style="height:10%" href="/"><span class="h4">HURUGIYA</span></a>
+              <ul class="nav ">
                 <% if admin_signed_in? %>
-                  <li class="nav-item">
+                  <li class="nav-item mt-3">
+                    <%= link_to "ホーム",admin_path, class: 'nav-link text-white'%>
+                  </li>
+                  <li class="nav-item mt-3">
                     <%= link_to "会員一覧",admin_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item mt-3 mb-5">
                     <%= link_to "コメント一覧",admin_comments_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item">
-                    <%= link_to "ログアウト",destroy_admin_session_path, class: 'nav-link text-white' %>
+                  <li class="nav-item mt-5 border-top">
+                    <%= link_to "ログアウト",destroy_admin_session_path, method: :delete, class: 'nav-link text-white' %>
                   </li>
                 <% elsif user_signed_in? %>
-                  <li class="nav-item">
+                  <li class="nav-item mt-3">
                     <%= link_to "ホーム",root_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item mt-3">
                     <%= link_to "古着屋紹介",posts_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item">
-                    <%= link_to "マップ",posts_map_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item">
+                  <li class="nav-item mt-3 mb-5">
                     <%= link_to "マイページ",users_mypage_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item mt-5 border-top">
                     <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
                   </li>
                 <% else %>
-                  <li class="nav-item">
+                  <li class="nav-item mt-3">
                     <%= link_to "ホーム",root_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item">
-                    <%= link_to "古着屋紹介",posts_path, class: 'nav-link text-white' %>
+                  <li class="nav-item mt-3">
+                    <%= link_to "ログイン",new_user_session_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item">
-                    <%= link_to "マップ",posts_map_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item">
-                    <%= link_to "マイページ",users_mypage_path, class: 'nav-link text-white' %>
+                  <li class="nav-item mt-3">
+                    <%= link_to "新規登録",new_user_registration_path, class: 'nav-link text-white' %>
                   </li>
                 <% end %>
               </ul>
@@ -68,20 +65,17 @@
               <div class="container">
                 <%= render 'layouts/search' %>
                 <ul class="navbar-nav ml-auto">
-                <% if admin_signed_in? %>
-                  <li class="nav-item">
-                    <%= link_to "ログイン",new_admin_session_path, class: 'nav-link text-dark' %>
-                  </li>
-                <% elsif user_signed_in? %>
+                <% if user_signed_in? %>
                   <li class="nav-item">
                     <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
+                      <%= image_tag current_user.get_profile_image(50,50) %>
                       <%= current_user.name %>
                     <% end %>
                   </li>
+                <% elsif admin_signed_in? %>
+                  <p>管理者ログイン中</p>
                 <% else %>
-                  <li class="nav-item">
-                    <%= link_to "ログイン",new_user_session_path, class: 'nav-link text-dark' %>
-                  </li>
+                  <p>ログインしましょう</p>
                 <% end %>
                 </ul>
               </div>

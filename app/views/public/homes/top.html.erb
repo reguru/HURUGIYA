@@ -1,6 +1,19 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
-
 <p id="notice">
   <%= flash[:notice] %>
 </p>
+
+<div class="container">
+  <% if user_signed_in? %>
+    <div class="text-center">
+      <h3>トップページ</h3>
+    </div>
+  <% else %>
+    <div class="text-center">
+      <h3>ログインをしてください。</h3>
+    </div>
+    <div class="text-center">
+      <%= link_to "ログイン",new_user_session_path, class:"btn btn-success" %>
+      <%= link_to "新規登録",new_user_registration_path, class:"btn btn-success" %>
+    </div>
+  <% end %>
+</div>

@@ -3,7 +3,7 @@
     <h3>本当に退会しますか？</h3>
   </div>
   <div class="text-center mt-5">
-    <p>退会すると、マイページでの機能をすべて失います。</p>
+    <p>退会すると、機能をすべて失います。</p>
     <p>退会する場合は、「退会する」をクリックしてください。</p>
   </div>
   <div class="row mt-5">
@@ -13,7 +13,7 @@
     </div>
     <div class="col-1"></div>
     <div class="col-5">
-      <%= link_to "退会する",root_path, method: :delete, class: "btn btn-danger" %>
+      <%= link_to "退会する",users_quit_path, method: :patch, class: "btn btn-danger","data-confirm" => "本当に退会しますか？" %>
     </div>
   </div>
 </div>

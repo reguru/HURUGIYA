@@ -23,7 +23,13 @@
               <% end %>
             </td>
             <td><%= user.email %></td>
-            <td><%= user.is_deleted %></td>
+            <td>
+              <% if user.is_deleted %>
+                <label>退会</label>
+              <% else %>
+                <label>有効</label>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
