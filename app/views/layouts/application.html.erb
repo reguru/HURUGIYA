@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-2">
           <sidebar>
-            <nav class="navbar navbar-expand-lg bg-dark flex-column" style="height:600px;">
+            <nav class="navbar navbar-expand-lg bg-dark flex-column" style="height:100%;">
               <a class="navbar-brand text-white" style="height:10%" href="/"><span class="h4">HURUGIYA</span></a>
               <ul class="nav ">
                 <% if admin_signed_in? %>
@@ -36,10 +36,16 @@
                     <%= link_to "ホーム",root_path, class: 'nav-link text-white' %>
                   </li>
                   <li class="nav-item mt-3">
+                    <%= link_to "新規作成",new_post_path, class: 'nav-link text-white' %>
+                  </li>
+                  <li class="nav-item mt-3">
                     <%= link_to "古着屋紹介",posts_path, class: 'nav-link text-white' %>
                   </li>
-                  <li class="nav-item mt-3 mb-5">
+                  <li class="nav-item mt-3">
                     <%= link_to "マイページ",users_mypage_path, class: 'nav-link text-white' %>
+                  </li>
+                  <li class="nav-item mt-3 mb-5">
+                    <%= link_to "about",about_path, class: 'nav-link text-white' %>
                   </li>
                   <li class="nav-item mt-5 border-top">
                     <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
@@ -53,6 +59,9 @@
                   </li>
                   <li class="nav-item mt-3">
                     <%= link_to "新規登録",new_user_registration_path, class: 'nav-link text-white' %>
+                  </li>
+                  <li class="nav-item mt-3">
+                    <%= link_to "about",about_path, class: 'nav-link text-white' %>
                   </li>
                 <% end %>
               </ul>
@@ -68,7 +77,7 @@
                 <% if user_signed_in? %>
                   <li class="nav-item">
                     <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
-                      <%= image_tag current_user.get_profile_image(50,50) %>
+                      <%= image_tag current_user.get_profile_image, size: "40x40" %>
                       <%= current_user.name %>
                     <% end %>
                   </li>
