@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="row">
+  <div class="text-center mt-5">
+    <%= render 'layouts/search' %><br>
     <%= form_tag posts_path, method: :get,class: 'boards_searchForm' do %>
       <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
       {
@@ -7,27 +8,27 @@
         onchange: 'submit(this.form);'} %>
     <% end %>
   </div>
-  <div class="row">
-    <%= link_to new_post_path do %>
-      新規登録
-    <% end %>
-  </div>
-  
+
   <% @posts.each do |posts| %>
-  <div class="row mt-5 border">
-    <div class="col-3">
+  <div class="row mt-3 border">
+    <div class="col-2">
       <%= link_to post_path(posts.id) do %>
-        <%= image_tag posts.image[0], size: "100x100" %>
+        <%= image_tag posts.image[0], size: "150x150" %>
       <% end %>
     </div>
-    <div class="col-6">
-      <%= posts.name %><br>
-      <%= posts.address %><br>
-      <%= posts.introduction %>
+    <div class="col-8">
+      <%= link_to post_path(posts.id),class: 'text-dark' do %>
+        <p class="h3 m-2"><%= posts.name %>
+      <% end %>
+      <span class="h6 ml-5"><%= posts.address %></span></p>
+      <p class="h5 mt-3"><%= posts.introduction %></p>
     </div>
-    <div class="col-3">
-      <%= posts.favorites.count %><br>
-      <%= posts.comments.count %>
+    <div class="col-1"></div>
+    <div class="col-1">
+      <i class="far fa-heart"></i><%= posts.favorites.count %><br>
+      <i class="far fa-comment"></i><%= posts.comments.count %><br>
+      <%= posts.created_at.strftime('%Y/%m/%d') %><br>
+      <%= posts.user.name %>
     </div>
   </div>
   <% end %>

@@ -11,99 +11,66 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-2">
-          <sidebar>
-            <nav class="navbar navbar-expand-lg bg-dark flex-column" style="height:100%;">
-              <a class="navbar-brand text-white" style="height:10%" href="/"><span class="h4">HURUGIYA</span></a>
-              <ul class="nav ">
-                <% if admin_signed_in? %>
-                  <li class="nav-item mt-3">
-                    <%= link_to "ホーム",admin_path, class: 'nav-link text-white'%>
-                  </li>
-                  <li class="nav-item mt-3">
-                    <%= link_to "会員一覧",admin_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3 mb-5">
-                    <%= link_to "コメント一覧",admin_comments_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-5 border-top">
-                    <%= link_to "ログアウト",destroy_admin_session_path, method: :delete, class: 'nav-link text-white' %>
-                  </li>
-                <% elsif user_signed_in? %>
-                  <li class="nav-item mt-3">
-                    <%= link_to "ホーム",root_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3">
-                    <%= link_to "新規作成",new_post_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3">
-                    <%= link_to "古着屋紹介",posts_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3">
-                    <%= link_to "マイページ",users_mypage_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3 mb-5">
-                    <%= link_to "about",about_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-5 border-top">
-                    <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
-                  </li>
-                <% else %>
-                  <li class="nav-item mt-3">
-                    <%= link_to "ホーム",root_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3">
-                    <%= link_to "ログイン",new_user_session_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3">
-                    <%= link_to "新規登録",new_user_registration_path, class: 'nav-link text-white' %>
-                  </li>
-                  <li class="nav-item mt-3">
-                    <%= link_to "about",about_path, class: 'nav-link text-white' %>
-                  </li>
-                <% end %>
-              </ul>
-            </nav>
-          </sidebar>
-        </div>
-        <div class="col-10">
-          <header class="shadow-sm">
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <div class="container">
-                <%= render 'layouts/search' %>
-                <ul class="navbar-nav ml-auto">
-                <% if user_signed_in? %>
-                  <li class="nav-item">
-                    <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
-                      <%= image_tag current_user.get_profile_image, size: "40x40" %>
-                      <%= current_user.name %>
-                    <% end %>
-                  </li>
-                <% elsif admin_signed_in? %>
-                  <p>管理者ログイン中</p>
-                <% else %>
-                  <p>ログインしましょう</p>
-                <% end %>
-                </ul>
-              </div>
-            </nav>
-          </header>
-          <main class="mb-auto">
-            <%= yield %>
-          </main>
-          <footer>
-            <div class="container mt-5">
-              <div class="row">
-                <div class="mx-auto">
-                  <p>CopyRight Infratop.inc</p>
-                </div>
-              </div>
+    <div>
+      <header class="border-bottom ">
+        <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand text-dark ml-5" href="/"><span class="h3">HURUGIYA</span></a>
+          <ul class="navbar-nav ml-auto">
+          <% if admin_signed_in? %>
+            <li class="nav-item mr-2 h4">
+              <%= link_to "会員一覧",admin_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item mr-2">
+              <%= link_to "コメント一覧",admin_comments_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item mr-5">
+              <%= link_to "ログアウト",destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
+            </li>
+          <% elsif user_signed_in? %>
+            <li class="nav-item mr-2">
+              <%= link_to "新規作成",new_post_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item mr-2">
+              <%= link_to "古着屋紹介",posts_path, class: 'nav-link text-dark ' %>
+            </li>
+            <li class="nav-item mr-2">
+              <%= link_to "about",about_path, class: 'nav-link text-dark ' %>
+            </li>
+            <li class="nav-item mr-5">
+              <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'nav-link text-dark ',"data-confirm" => "ログアウトしますか？" %>
+            </li>
+            <li class="nav-item mr-5">
+              <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
+                <%= image_tag current_user.get_profile_image,class: 'rounded-circle', size: "40x40" %>
+                <span class="h5"><%= current_user.name %></span>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item mr-2">
+              <%= link_to "ログイン",new_user_session_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item mr-2">
+              <%= link_to "新規登録",new_user_registration_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item mr-5">
+              <%= link_to "about",about_path, class: 'nav-link text-dark' %>
+            </li>
+          <% end %>
+          </ul>
+        </nav>
+      </header>
+      <main class="mb-auto ">
+        <%= yield %>
+      </main>
+      <footer>
+        <div class="mt-5">
+          <div>
+            <div class="text-center">
+              <p>CopyRight Infratop.inc</p>
             </div>
-          </footer>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   </body>
 </html>

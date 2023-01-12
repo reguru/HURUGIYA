@@ -1,27 +1,27 @@
-<div class="container">
-  <div class="row text-center">
-    <h3>検索結果</h3>
-  </div>
-  <div class="row">
+<!--<div class="container">-->
+<!--  <div class="row text-center">-->
+<!--    <h3>検索結果</h3>-->
+<!--  </div>-->
+<!--  <div class="row">-->
     <%#= form_tag search_path, method: :get,class: 'boards_searchForm' do %>
       <%#= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
       {
         prompt: 'タグで絞り込み検索',
         onchange: 'submit(this.form);'} %>
     <%# end %>
-  </div>
-  <% @posts.each do |posts| %>
-  <div class="row mt-5 border">
-    <div class="col-3">
-      <%= link_to post_path(posts.id) do %>
-        <%= image_tag posts.image[0], size: "100x100" %>
-      <% end %>
-    </div>
-    <div class="col-6">
-      <%= posts.name %><br>
-      <%= posts.address %><br>
-      <%= posts.introduction %>
-    </div>
-  </div>
-  <% end %>
-</div>
+<!--  </div>-->
+<!--  <%# @posts.each do |posts| %>-->
+<!--  <div class="row mt-5 border">-->
+<!--    <div class="col-3">-->
+<!--      <%#= link_to post_path(posts.id) do %>-->
+<!--        <%#= image_tag posts.image[0], size: "100x100" %>-->
+<!--      <%# end %>-->
+<!--    </div>-->
+<!--    <div class="col-6">-->
+<!--      <%#= posts.name %><br>-->
+<!--      <%#= posts.address %><br>-->
+<!--      <%#= posts.introduction %>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <%# end %>-->
+<!--</div>-->

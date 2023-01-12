@@ -2,9 +2,19 @@
   <div class="text-center m-5">
     <h3>会員一覧</h3>
   </div>
-  <div class="row">
+  <div class="text-center m-4">
+    <% if admin_signed_in? %>
+      <div class="search_form">
+        <%= form_with url: admin_path,local: true, method: :get do |f| %>
+          <%= f.text_field :search %>
+          <%= f.submit "検索",class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row ">
     <div class="col-1"></div>
-    <table class="table col-10">
+    <table class="table table-hover col-10">
       <thead>
         <tr>
           <th class="bg-light" style="width: 15%">会員ID</th>
@@ -18,16 +28,16 @@
           <tr>
             <td><%= user.id %></td>
             <td>
-              <%= link_to admin_user_path(user.id) do %>
+              <%= link_to admin_user_path(user.id),class: 'text-dark' do %>
                 <%= user.name %>
               <% end %>
             </td>
             <td><%= user.email %></td>
             <td>
               <% if user.is_deleted %>
-                <label>退会</label>
+                <label class="text-danger">退会</label>
               <% else %>
-                <label>有効</label>
+                <label class="text-success">有効</label>
               <% end %>
             </td>
           </tr>

@@ -37,7 +37,11 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
+    if params[:tag_id].present?
+      @posts = Tag.find(params[:tag_id]).posts 
+    else
+      @posts = Post.looks(params[:word]) 
+    end
   end
 
   def map

@@ -12,7 +12,11 @@ class Post < ApplicationRecord
   has_many_attached :image
 
   def self.looks(word)
-    @post = Post.where("name LIKE? OR introduction LIKE? OR address LIKE?","%#{word}%","%#{word}%","%#{word}%")
+    if word
+      Post.where("name LIKE? OR introduction LIKE? OR address LIKE?","%#{word}%","%#{word}%","%#{word}%")
+    else
+      Post.all
+    end
   end
 
   def favorited_by?(user)

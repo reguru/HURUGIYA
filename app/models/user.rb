@@ -18,6 +18,14 @@ class User < ApplicationRecord
     end
   end
   
+  def self.search(search)
+    if search
+      User.where(['name LIKE? OR email LIKE?', "%#{search}%","%#{search}%"])
+    else
+      User.all
+    end
+  end
+  
   def get_profile_image
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

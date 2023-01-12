@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="text-center">
-    <h4>コメント一覧</h4>
+  <div class="text-center mt-5">
+    <h3>コメント一覧</h3>
   </div>
-  <div class="text-center">
+  <div class="text-center m-4">
     <% if admin_signed_in? %>
       <div class="search_form">
         <%= form_with url: admin_comments_path,local: true, method: :get do |f| %>
@@ -24,10 +24,10 @@
     <tbody>
       <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.id %></td>
-        <td><%= comment.user.name %></td>
-        <td><%= comment.comment %></td>
-        <td>
+        <td style="width:10%"><%= comment.id %></td>
+        <td style="width:20%"><%= comment.user.name %></td>
+        <td style="width:50%"><%= comment.comment %></td>
+        <td style="width:10%">
           <%= link_to "削除する",admin_comment_path(comment.id),method: :delete,class: "btn btn-danger" %>
         </td>
       </tr>
