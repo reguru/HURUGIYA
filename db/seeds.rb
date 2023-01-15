@@ -10,13 +10,12 @@ Admin.create(
   email: 'rrrr@gmail.com',
   password: 'rrrrrrr'
   )
-  
+
 Tag.create([
   {name: 'ストリート系'},
   {name: 'アメカジ系'},
   {name: 'ミリタリー系'},
+  {name: 'ヨーロッパ古着系'},
   {name: 'きれいめカジュアル系'},
   {name: 'ワーク系'},
-  {name: 'スポーツミックス系'},
-  {name: 'ヨーロッパ古着系'},
   ])

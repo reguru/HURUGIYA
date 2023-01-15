@@ -38,9 +38,9 @@ class Public::PostsController < ApplicationController
 
   def index
     if params[:tag_id].present?
-      @posts = Tag.find(params[:tag_id]).posts 
+      @posts = Tag.find(params[:tag_id]).posts.order(created_at: :desc)
     else
-      @posts = Post.looks(params[:word]) 
+      @posts = Post.looks(params[:word]).order(created_at: :desc)
     end
   end
 

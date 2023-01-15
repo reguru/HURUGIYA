@@ -1,14 +1,18 @@
 <div class="container">
-  <div class="text-center">
+  <div class="text-center m-5">
     <h3>投稿一覧</h3>
   </div>
-  <div>
-    <% @user_posts.each do |user_post| %>
-      <%= link_to post_path(user_post) do %>
-        <%= user_post.name %>
-        <%= image_tag user_post.image[0], size:"100x100" %>
-        <%= user_post.introduction %>
+  <div class="row bg-light">
+      <% @user_posts.each do |user_post| %>
+      <div class="ml-4 my-3 shadow-sm">
+        <%= link_to post_path(user_post) do %>
+          <%= image_tag user_post.image[0],width: 200,height: 200 %>
+          <p class="h6 pt-2 px-2 text-dark" style="width:200px;"><%= user_post.name %></p>
+        <% end %>
+      </div>
       <% end %>
-    <% end %>
+      <div class="text-center">
+        <%#= paginate favorite_posts %>
+      </div>
   </div>
 </div>

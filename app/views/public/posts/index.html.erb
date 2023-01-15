@@ -11,24 +11,27 @@
 
   <% @posts.each do |posts| %>
   <div class="row mt-3 border">
-    <div class="col-2">
-      <%= link_to post_path(posts.id) do %>
-        <%= image_tag posts.image[0], size: "150x150" %>
+    <div class="col-md-2">
+      <% if posts.image.attached? %>
+        <%= link_to post_path(posts.id) do %>
+          <%= image_tag posts.image[0], size: "150x150" %>
+        <% end %>
       <% end %>
     </div>
-    <div class="col-8">
+    <div class="col-md-8">
       <%= link_to post_path(posts.id),class: 'text-dark' do %>
-        <p class="h3 m-2"><%= posts.name %>
+        <p class="h3 mt-2 "><%= posts.name %></p>
       <% end %>
-      <span class="h6 ml-5"><%= posts.address %></span></p>
-      <p class="h5 mt-3"><%= posts.introduction %></p>
+      <p class="h6 "><%= posts.address %></p>
+      <p class="h5 mt-3 mr-5">
+        <%= truncate(posts.introduction,length: 100) %>
+      </p>
     </div>
-    <div class="col-1"></div>
-    <div class="col-1">
-      <i class="far fa-heart"></i><%= posts.favorites.count %><br>
-      <i class="far fa-comment"></i><%= posts.comments.count %><br>
-      <%= posts.created_at.strftime('%Y/%m/%d') %><br>
-      <%= posts.user.name %>
+    <div class="col-md-2 mt-5">
+      <i class="fas fa-heart mr-2"></i><%= posts.favorites.count %><br>
+      <i class="fas fa-comment mr-2"></i><%= posts.comments.count %><br>
+      <%= posts.user.name %><br>
+      <%= posts.created_at.strftime('%Y/%m/%d') %>
     </div>
   </div>
   <% end %>

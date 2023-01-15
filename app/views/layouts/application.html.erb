@@ -20,24 +20,32 @@
             <li class="nav-item mr-2 h4">
               <%= link_to "会員一覧",admin_path, class: 'nav-link text-dark' %>
             </li>
-            <li class="nav-item mr-2">
+            <li class="nav-item mr-2 h4">
               <%= link_to "コメント一覧",admin_comments_path, class: 'nav-link text-dark' %>
             </li>
-            <li class="nav-item mr-5">
+            <li class="nav-item mr-5 h4">
               <%= link_to "ログアウト",destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
           <% elsif user_signed_in? %>
             <li class="nav-item mr-2">
-              <%= link_to "新規作成",new_post_path, class: 'nav-link text-dark' %>
+              <%= link_to new_post_path, class: 'nav-link text-dark' do %>
+                <i class="fas fa-plus-circle"></i>新規作成
+              <% end %>
             </li>
             <li class="nav-item mr-2">
-              <%= link_to "古着屋紹介",posts_path, class: 'nav-link text-dark ' %>
+              <%= link_to posts_path, class: 'nav-link text-dark ' do %>
+                <i class="fas fa-tshirt"></i>紹介一覧
+              <% end %>
             </li>
             <li class="nav-item mr-2">
-              <%= link_to "about",about_path, class: 'nav-link text-dark ' %>
+              <%= link_to about_path, class: 'nav-link text-dark' do %>
+                <i class="fas fa-question-circle"></i>About
+              <% end %>
             </li>
             <li class="nav-item mr-5">
-              <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'nav-link text-dark ',"data-confirm" => "ログアウトしますか？" %>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark ',"data-confirm" => "ログアウトしますか？" do %>
+                <i class="fas fa-sign-out-alt"></i>ログアウト
+              <% end %>
             </li>
             <li class="nav-item mr-5">
               <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
