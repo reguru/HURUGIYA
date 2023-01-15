@@ -5,44 +5,44 @@
   <div>
     <%= form_with model: @post do |f| %>
     <div class="row mt-3">
-      <div class="col-5"></div>
-      <div class="col-6">
+      <div class="col-md-5"></div>
+      <div class="col-md-6">
         <%= f.file_field :image, multiple: true, class: "img_field" %>
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-3"></div>
-      <div class="col-2 h5">
+      <div class="col-md-3"></div>
+      <div class="col-md-2 h5">
         <%= f.label :"古着屋名" %>
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <%= f.text_field :name %>
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-3"></div>
-      <div class="col-2 h5">
+      <div class="col-md-3"></div>
+      <div class="col-md-2 h5">
         <%= f.label :"住所" %>
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <%= f.text_field :address,size: 47 %>
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-3"></div>
-      <div class="col-2 h5">
+      <div class="col-md-3"></div>
+      <div class="col-md-2 h5">
         <%= f.label :"紹介文" %>
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <%= f.text_area :introduction,size: "50x5" %>
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-3"></div>
-      <div class="col-2 h5">
+      <div class="col-md-3"></div>
+      <div class="col-md-2 h5">
         <%= f.label :"系統" %>
       </div>
-      <div class="form-group col-6">
+      <div class="form-group col-md-6">
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
           <div class="form-check">
             <%= tag.label class: 'form-check-label' do %>
@@ -54,9 +54,9 @@
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-5"></div>
-      <div class="col-6">
-        <%= f.submit "投稿する", class: "submit btn btn-success" %>
+      <div class="col-md-5"></div>
+      <div class="col-md-6">
+        <%= f.submit "投稿する", class: "submit1 btn btn-success" %>
       </div>
     </div>
     <% end %>
