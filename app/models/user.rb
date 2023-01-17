@@ -3,12 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-  
+
   has_one_attached :profile_image
 
   def self.guest
@@ -17,7 +17,13 @@ class User < ApplicationRecord
       user.name = "ゲスト"
     end
   end
-  
+
+  def guest_check
+    if current_user.name == "ゲスト"
+      redirect_to root_path, notice: 'このページを見るには会員登録が必要です。'
+    end
+  end
+
   def self.search(search)
     if search
       User.where(['name LIKE? OR email LIKE?', "%#{search}%","%#{search}%"])
@@ -25,7 +31,8 @@ class User < ApplicationRecord
       User.all
     end
   end
-  
+
+
   def get_profile_image
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

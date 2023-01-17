@@ -10,30 +10,43 @@
       </div>
       <div class="col-md-4">
         <h4><%= @user.name %></h4><br>
-        <%= link_to "プロフィールを変更する", users_mypage_edit_path, class: 'btn btn-secondary' %>
+        <% unless @user.name == "ゲスト" %>
+          <%= link_to "プロフィールを変更する", users_mypage_edit_path, class: 'btn btn-secondary' %>
+        <% end %>
       </div>
     </div>
+
     <div class="row mt-5 ">
       <div class="col-md-3"></div>
       <div class="col-md-6 ">
-        <%= link_to favorites_user_path(@user),class:'btn btn-outline-secondary text-dark button1' do %>
-          <i class="fas fa-thumbs-up mr-2"></i>いいねした投稿
+        <% if @user.name == "ゲスト" %>
+        <div style="pointer-events: none;">
+          <%= link_to favorites_user_path(@user),class:'btn btn-outline-secondary text-dark button1' do %>
+            <span class="guest1"><i class="fas fa-thumbs-up mr-2"></i>いいねした投稿</span>
+          <% end %>
+          <%= link_to users_posts_path,class:'btn btn-outline-secondary text-dark button1 mt-5' do %>
+            <span class="guest1"><i class="fas fa-address-book mr-2"></i>自分の投稿</span>
+          <% end %>
+        </div>
+        <% else %>
+          <%= link_to favorites_user_path(@user),class:'btn btn-outline-secondary text-dark button1' do %>
+            <i class="fas fa-thumbs-up mr-2"></i>いいねした投稿
+          <% end %>
+          <%= link_to users_posts_path,class:'btn btn-outline-secondary text-dark button1 mt-5' do %>
+            <i class="fas fa-address-book mr-2"></i>自分の投稿
+          <% end %>
         <% end %>
       </div>
     </div>
-    <div class="row my-5">
-      <div class="col-md-3"></div>
-      <div class="col-md-6 ">
-        <%= link_to users_posts_path,class:'btn btn-outline-secondary text-dark button1' do %>
-          <i class="fas fa-address-book mr-2"></i>自分の投稿
-        <% end %>
-      </div>
-    </div>
+
     <div class="text-center border-top mt-5">
       <div class="mt-5">
-        <h6>退会希望の方は<%= link_to "こちら", users_quit_path %>をクリック</h6>
+        <% unless @user.name == "ゲスト" %>
+          <h6>退会希望の方は<%= link_to "こちら", users_quit_path %>をクリック</h6>
+        <% end %>
       </div>
     </div>
+
   <% else %>
     <div class="text-center">
       <p>ログインをしましょう！</p>

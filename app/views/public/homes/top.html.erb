@@ -1,7 +1,3 @@
-<!--<p id="notice">-->
-<!--  <%#= flash[:notice] %>-->
-<!--</p>-->
-
 <div>
   <% if user_signed_in? %>
     <div class="text-center m-5">
@@ -11,28 +7,28 @@
       <h3>タグ検索</h3>
       <div class=" d-flex justify-content-center overflow-auto border-bottom">
       <%= link_to posts_path({tag_id:1}),class: 'm-3' do %>
-        <%= image_tag 'pexels-cottonbro-studio-6069530.jpg',size: "150x150" %>
-        <p class="text-dark">ストリート系</p>
+        <%= image_tag 'IMG_7530.JPG',size: "150x150" %>
+        <p class="text-dark text-center">ストリート系</p>
       <% end %>
       <%= link_to posts_path({tag_id:2}),class: 'm-3' do %>
-        <%= image_tag 'pexels-cottonbro-studio-6069530.jpg',size: "150x150" %>
-        <p class="text-dark">アメカジ系</p>
+        <%= image_tag 'IMG_7531.JPG',size: "150x150" %>
+        <p class="text-dark text-center">アメカジ系</p>
       <% end %>
       <%= link_to posts_path({tag_id:3}),class: 'm-3' do %>
-        <%= image_tag 'pexels-cottonbro-studio-6069530.jpg',size: "150x150" %>
-        <p class="text-dark">ミリタリー系</p>
+        <%= image_tag 'IMG_7532.JPG',size: "150x150" %>
+        <p class="text-dark text-center">ミリタリー系</p>
       <% end %>
       <%= link_to posts_path({tag_id:4}),class: 'm-3' do %>
-        <%= image_tag 'pexels-cottonbro-studio-6069530.jpg',size: "150x150" %>
-        <p class="text-dark">ヨーロッパ古着系</p>
+        <%= image_tag 'IMG_7533.JPG',size: "150x150" %>
+        <p class="text-dark text-center">ヨーロッパ古着系</p>
       <% end %>
       <%= link_to posts_path({tag_id:5}),class: 'm-3' do %>
-        <%= image_tag 'pexels-cottonbro-studio-6069530.jpg',size: "150x150" %>
-        <p class="text-dark">きれいめカジュアル系</p>
+        <%= image_tag 'IMG_7534.JPG',size: "150x150" %>
+        <p class="text-dark text-center">きれいめカジュアル系</p>
       <% end %>
       <%= link_to posts_path({tag_id:6}),class: 'm-3' do %>
-        <%= image_tag 'pexels-cottonbro-studio-6069530.jpg',size: "150x150" %>
-        <p class="text-dark">ワーク系</p>
+        <%= image_tag 'IMG_7535.JPG',size: "150x150" %>
+        <p class="text-dark text-center">ワーク系</p>
       <% end %>
       </div>
     </div>
@@ -45,7 +41,7 @@
               <%= link_to post_path(post.id) do %>
                 <%= image_tag post.image[0],:width => '100%', :height => '150' %>
               <% end %>
-              <p class="text-dark mt-3">
+              <p class="text-dark mt-3 h5">
                 <%= post.name %>
               </p>
               <p class="text-dark">

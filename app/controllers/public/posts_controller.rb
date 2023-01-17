@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_user!
+  #before_action :guest_check ,except: [:show,:index]
 
   def new
     @post = Post.new
@@ -19,9 +20,6 @@ class Public::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    #if params[:tag]
-      #Tag.create(name: params[:tag])
-    #end
   end
 
   def update
@@ -38,9 +36,9 @@ class Public::PostsController < ApplicationController
 
   def index
     if params[:tag_id].present?
-      @posts = Tag.find(params[:tag_id]).posts.order(created_at: :desc)
+      @posts = Tag.find(params[:tag_id]).posts.order(created_at: :desc).page(params[:page])
     else
-      @posts = Post.looks(params[:word]).order(created_at: :desc)
+      @posts = Post.looks(params[:word]).order(created_at: :desc).page(params[:page])
     end
   end
 
