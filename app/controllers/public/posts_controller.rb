@@ -1,6 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_user!
-  #before_action :guest_check ,except: [:show,:index]
+  before_action :guest_check ,except: [:show,:index]
 
   def new
     @post = Post.new
@@ -9,8 +9,11 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to post_path(@post.id)
+    if @post.save
+      redirect_to post_path(@post.id)
+    else
+      render :new
+    end
   end
 
   def show
@@ -20,6 +23,9 @@ class Public::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    unless @post.user == current_user
+      redirect_to root_path, notice: "自分の投稿以外は編集できません。"
+    end
   end
 
   def update
@@ -51,4 +57,11 @@ class Public::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:name,:address,:introduction, image:[], tag_ids:[])
   end
+
+  def guest_check
+    if current_user.name == "ゲスト"
+      redirect_to root_path, notice: 'このページを見るには会員登録が必要です。'
+    end
+  end
+
 end

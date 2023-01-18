@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :guest_check ,except: [:show]
 
   def show
     @user = current_user
@@ -32,13 +33,20 @@ class Public::UsersController < ApplicationController
 
   def favorites
     @user = User.find(params[:id])
-    favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
-    @favorite_posts = Post.find(favorites)
+    favorited_post_ids = @user.favorites.pluck(:post_id)
+    @favorite_posts = Post.where(id: favorited_post_ids).page(params[:page])
   end
 
   private
-  
+
   def user_params
     params.require(:user).permit(:name,:email,:profile_image)
   end
+
+  def guest_check
+    if current_user.name == "ゲスト"
+      redirect_to root_path, notice: 'このページを見るには会員登録が必要です。'
+    end
+  end
+  
 end

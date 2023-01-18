@@ -9,18 +9,15 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
+  validates :name, presence: true
+  validates :email, presence: true
+
   has_one_attached :profile_image
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
-    end
-  end
-
-  def guest_check
-    if current_user.name == "ゲスト"
-      redirect_to root_path, notice: 'このページを見るには会員登録が必要です。'
     end
   end
 

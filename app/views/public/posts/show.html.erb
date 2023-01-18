@@ -13,21 +13,21 @@
       <%= render 'favorites',post: @post %>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-md-8 h5">
       <%= @post.address %>
     </div>
   </div>
-  
+
   <div class="row">
-    <% if @post.image.attached? %>
+    <% if @post.get_image.attached? %>
       <% @post.image.each do |image| %>
         <%= image_tag image,class: 'my-4 mr-3', size: "200x200" %>
       <% end %>
     <% end %>
   </div>
-  
+
   <div class="row">
     <div class="col-md-7 mb-4 font1">
       <%= @post.introduction %>
@@ -39,7 +39,7 @@
       <% end %>
     </ul>
   </div>
-  
+
   <div class="row border-top">
     <p class="h5 my-3">コメント(<%= @post.comments.count %>)</p>
   </div>

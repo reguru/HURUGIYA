@@ -6,3 +6,26 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "を6文字以上に設定してください。"
+
+        post:
+          attributes:
+            address:
+              blank: "を入力してください。"
+            name:
+              blank: "を入力してください。"
+            tag_ids:
+              blank: "を選択してください。"
+
+    attributes:
+      post:
+        address: "住所"
+        name: "古着屋名"
+        tag_ids: "系統"
