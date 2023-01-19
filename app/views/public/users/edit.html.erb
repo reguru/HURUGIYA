@@ -7,11 +7,11 @@
       <% if current_user.profile_image %>
         <%= image_tag current_user.profile_image, class: "img_prev",size: "150x150" %><br>
       <% else %>
-        
+
       <% end %>
       <%= f.file_field :profile_image, class: "img_field mt-3" %>
     </div>
-    
+
     <div class="row mt-5">
       <div class="col-md-3"></div>
       <div class="col-md-2">
