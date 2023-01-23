@@ -3,11 +3,11 @@
     <h3>マイページ</h3>
   </div>
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-2">
+    <div class="col-lg-4 col-md-3 col-sm-1"></div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-5">
       <%= image_tag @user.get_profile_image, size: "150x150" %>
     </div>
-    <div class="col-md-4">
+    <div class="col-lg-5 col-md-6 col-sm-7 col-7">
       <h4><%= @user.name %></h4><br>
       <% unless @user.name == "ゲスト" %>
         <%= link_to "プロフィールを変更する", users_mypage_edit_path, class: 'btn btn-secondary' %>
