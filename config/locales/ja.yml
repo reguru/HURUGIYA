@@ -14,6 +14,10 @@ ja:
           attributes:
             password:
               blank: "を6文字以上に設定してください。"
+            email: 
+              blank: "を入力してください。"
+            name:
+              blank: "を入力してください。"
 
         post:
           attributes:
@@ -29,3 +33,6 @@ ja:
         address: "住所"
         name: "古着屋名"
         tag_ids: "系統"
+        
+      user:
+        name: "ユーザー名"
