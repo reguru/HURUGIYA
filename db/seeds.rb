@@ -19,3 +19,20 @@ Tag.create([
   {name: 'きれいめカジュアル系'},
   {name: 'ワーク系'},
   ])
+  
+  
+users = User.create!(
+  [
+    {email: 'olivia@test.com', name: 'Olivia', password: 'password', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user1.jpg"), filename:"sample-user1.jpg")},
+    {email: 'james@test.com', name: 'James', password: 'password', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user2.jpg"), filename:"sample-user2.jpg")},
+    {email: 'lucas@test.com', name: 'Lucas', password: 'password', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user3.jpg"), filename:"sample-user3.jpg")}
+  ]
+)
+
+Post.create!(
+  [
+    {name: 'JUNGLE', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg"), introduction: '大人気の古着屋です。休日にはたくさんのお客さんが店に入っていきます。', user_id: users[0].id, address: '愛知県名古屋市中区大須89-35' },
+    {name: 'バイキング', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg"), introduction: '東京都にある古着屋です。少しわかりにくいところにありますが、様々な古着がおいてあり、定員さんもとても話しやすい方です。', user_id: users[1].id, address: '東京都大東区来門56-1' },
+    {name: 'Underwood', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg"), introduction: 'ヨーロッパ古着好きな方にオススメ！とても多くのヨーロッパ古着が置いてあります！ぜひ行ってみてください！', user_id: users[2].id, address: '神奈川県鎌倉市空座町99-5' }
+  ]
+)
