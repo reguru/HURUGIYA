@@ -46,7 +46,7 @@
               <p class="text-dark mt-3 h5">
                 <%= post.name %>
               </p>
-              <p class="text-dark mt-3" style="width:250px">
+              <p class="text-dark mt-3" style="width:250px;">
                 <%= truncate(post.introduction,length: 50) %>
               </p>
             <% end %>
@@ -58,7 +58,7 @@
   <% else %>
     <div style="height:100px;"></div>
     <div class="text-center m-5" style="height:500px;">
-      <h3>このサイトを利用するために、ログインをしてください。</h3>
+      <h3>このサイトを利用するために、ログインを行ってください。</h3>
       <div class="mt-5 d-flex justify-content-center">
         <%= link_to "ログイン",new_user_session_path, class:"btn btn-primary mr-5 submit1" %>
         <%= link_to "新規登録",new_user_registration_path, class:"btn btn-success submit1" %>
