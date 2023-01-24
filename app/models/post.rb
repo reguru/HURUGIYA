@@ -11,7 +11,7 @@ class Post < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
-  validates :tag_ids, presence: true
+  #validates :tag_ids, presence: true
   
   has_many_attached :image
 
