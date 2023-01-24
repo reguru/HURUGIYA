@@ -35,6 +35,9 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     favorited_post_ids = @user.favorites.pluck(:post_id)
     @favorite_posts = Post.where(id: favorited_post_ids).page(params[:page])
+    unless @user == current_user
+      redirect_to root_path, notice: "他のユーザーのいいね一覧は閲覧できません。"
+    end
   end
 
   private
