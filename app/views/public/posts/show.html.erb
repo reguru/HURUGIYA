@@ -1,15 +1,15 @@
 <div class="container mt-5">
+  <div class="d-flex justify-content-end">
+    <% if @post.user == current_user %>
+      <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
+    <% end %>
+  </div>
+
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-10 col-sm-9 col-8">
       <h2><%= @post.name %></h2>
     </div>
-    <div class="col-md-2">
-      <% if @post.user == current_user %>
-        <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
-      <% end %>
-    </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-sm-3 col-4">
       <%= render 'favorites',post: @post %>
     </div>
   </div>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="d-flex flex-row overflow-auto">
     <% if @post.get_image.attached? %>
       <% @post.image.each do |image| %>
         <%= image_tag image,class: 'my-4 mr-3', size: "200x200" %>
@@ -28,12 +28,12 @@
     <% end %>
   </div>
 
-  <div class="row">
+  <div class="row my-4 ">
     <div class="col-md-7 mb-4 font1">
       <%= @post.introduction %>
     </div>
     <div class="col-md-1"></div>
-    <ul class="col-md-3">
+    <ul class="col-md-3 ml-2">
       <% @post.tags.each do |tag| %>
         <li><%= tag.name %></li>
       <% end %>
@@ -41,13 +41,13 @@
   </div>
 
   <div class="row border-top">
-    <p class="h5 my-3">コメント(<%= @post.comments.count %>)</p>
+    <p class="h5 ml-2 my-3">コメント(<%= @post.comments.count %>)</p>
   </div>
-  <div class="row">
+  <div class="row ml-2">
     <%= image_tag current_user.get_profile_image, class:'rounded-circle', size: "40x40" %>
     <span class="h5 ml-3"><%= current_user.name %></span>
   </div>
-  <div class="row mt-3">
+  <div class="row mt-3 ml-2">
     <% unless current_user.name == "ゲスト" %>
       <%= form_with model: [@post, @comment] do |f| %>
         <%= f.text_area :comment, placeholder:"コメントをここに", size: "30x2" %>
@@ -63,7 +63,7 @@
       <span class="ml-4 h6"><%= comment.created_at.strftime('%Y/%m/%d') %></span><br>
       <span class="ml-5 font1"><%= comment.comment %></span>
       <% if comment.user == current_user %>
-        <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, class: "btn btn-danger" %>
+        <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, class: "btn btn-danger ml-3" %>
       <% end %>
     </div>
     <% end %>

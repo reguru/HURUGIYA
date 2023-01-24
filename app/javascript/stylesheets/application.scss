@@ -1,43 +1,4 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap');
 
-.submit1 {
-  width: 200px;
-  height: 40px;
-}
-
-.font1 {
-  font-size: 20px;
-}
-
-.button1 {
-  width: 100%;
-}
-
-.box {
-  position: relative;
-}
-
-.center {
-  position: absolute;
-}
-
-.pagination>li>a {
-  border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
-}
-
-/* 表示しているページ番号のデザイン */
-.pagination>.active>a {
-  background-color: #808080;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
-}
-
-/*ホバー時のデザイン*/
-.pagination>li>a:hover {
-  border-radius: 15px;    /*角を丸くする*/
-}
-
-.guest1 {
-  color: #C0C0C0;
-}

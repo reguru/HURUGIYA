@@ -1,66 +1,38 @@
-<div class="container">
-  <div class="text-center m-5">
+<div class="container" style="height:600px;">
+  <div class="text-center m-5 font-type1">
     <h4><%= @user.name %>さんの会員情報</h4>
   </div>
   <%= form_with model: @user,url: admin_user_path(@user.id), method: :patch do |f| %>
-    <div class="row m-3">
-      <div class="col-md-3"></div>
-      <div class="col-md-2 d-flex align-items-end">
-        <p>プロフィール画像</p>
-      </div>
-      <div class="col-md-6">
-        <%= image_tag @user.get_profile_image, size: "100x100" %>
-      </div>
-    </div>
-
-    <div class="row m-3">
-      <div class="col-md-3"></div>
-      <div class="col-md-2">
-        <p>会員ID</p>
-      </div>
-      <div class="col-md-6">
-        <%= @user.id %>
-      </div>
-    </div>
-
-    <div class="row m-3">
-      <div class="col-md-3"></div>
-      <div class="col-md-2">
-        <p>ユーザー名</p>
-      </div>
-      <div class="col-md-6">
-        <%= f.text_field :name %>
-      </div>
-    </div>
-
-    <div class="row m-3">
-      <div class="col-md-3"></div>
-      <div class="col-md-2">
-        <p>メールアドレス</p>
-      </div>
-      <div class="col-md-6">
-        <%= f.email_field :email %>
-      </div>
-    </div>
-
-    <div class="row m-3">
-      <div class="col-md-3"></div>
-        <div class="col-md-2">
-          <p>会員ステータス</p>
-        </div>
-        <div class="col-md-6">
+    <table class="d-flex justify-content-center my-5">
+      <tr>
+        <th style="width:200px; height:50px;">プロフィール画像</th>
+        <td><%= image_tag @user.get_profile_image, size: "100x100" %></td>
+      </tr>
+      <tr>
+        <th style="width:200px; height:50px;">会員ID</th>
+        <td><%= @user.id %></td>
+      </tr>
+      <tr>
+        <th style="width:200px; height:50px;">ユーザー名</th>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <th style="width:200px; height:50px;">メールアドレス</th>
+        <td><%= f.email_field :email, size: 30 %></td>
+      </tr>
+      <tr>
+        <th style="width:200px; height:50px;">会員ステータス</th>
+        <td>
           <%= f.radio_button :is_deleted,false %>
           <%= f.label :is_deleted,"有効" %>
-          <%= f.radio_button :is_deleted,true %>
+          <%= f.radio_button :is_deleted,true ,class:'ml-3' %>
           <%= f.label :is_deleted,"退会" %>
-        </div>
-    </div>
-
-    <div class="row m-3">
-      <div class="col-md-5"></div>
-      <div class="col-md-6">
-        <%= f.submit "変更を保存", class:'btn btn-success' %>
-      </div>
-    </div>
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td><%= f.submit "変更を保存", class:'btn btn-success' %></td>
+      </tr>
+    </table>
   <% end %>
 </div>

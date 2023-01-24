@@ -14,7 +14,7 @@
     <div>
       <header class="border-bottom ">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand text-dark ml-5" href="/"><span class="h3">HURUGIYA</span></a>
+          <a class="navbar-brand text-dark ml-5" href="/"><span class="h3 font-title">HURUGIYA</span></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,18 +26,18 @@
 
           <ul class="navbar-nav ml-auto">
           <% if admin_signed_in? %>
-            <li class="nav-item mr-2 h5">
+            <li class="nav-item mr-2 h5 font-type1">
               <%= link_to "会員一覧",admin_path, class: 'nav-link text-dark' %>
             </li>
-            <li class="nav-item mr-2 h5">
+            <li class="nav-item mr-2 h5 font-type1">
               <%= link_to "コメント一覧",admin_comments_path, class: 'nav-link text-dark' %>
             </li>
-            <li class="nav-item mr-5 h5">
+            <li class="nav-item mr-5 h5 font-type1">
               <%= link_to "ログアウト",destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
 
           <% elsif user_signed_in? %>
-            <li class="nav-item mr-2 mt-2 h5">
+            <li class="nav-item mr-2 mt-2 h5  font-type1">
               <% if current_user.name == "ゲスト" %> <!--ゲストログインしているか判断*/-->
                 <div style="pointer-events: none;">
                   <%= link_to new_post_path, class: 'nav-link text-dark' do %>
@@ -50,22 +50,22 @@
                 <% end %>
               <% end %>
             </li>
-            <li class="nav-item mr-2 mt-2 h5">
+            <li class="nav-item mr-2 mt-2 h5 font-type1">
               <%= link_to posts_path, class: 'nav-link text-dark ' do %>
                 <i class="fas fa-tshirt mr-1"></i>紹介一覧
               <% end %>
             </li>
-            <li class="nav-item mr-2 mt-2 h5">
+            <li class="nav-item mr-2 mt-2 h5 font-type1">
               <%= link_to about_path, class: 'nav-link text-dark' do %>
-                <i class="fas fa-question-circle mr-1"></i>About
+                <i class="fas fa-question-circle mr-1"></i>概要
               <% end %>
             </li>
-            <li class="nav-item mr-2 mt-2 h5">
+            <li class="nav-item mr-2 mt-2 h5 font-type1">
               <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark ' do %>
                 <i class="fas fa-sign-out-alt mr-1"></i>ログアウト
               <% end %>
             </li>
-            <li class="nav-item mr-5">
+            <li class="nav-item mr-5 font-type1">
               <%= link_to users_mypage_path, class: 'nav-link text-dark' do %>
                 <%= image_tag current_user.get_profile_image,class: 'rounded-circle', size: "40x40" %>
                 <span class="h5"><%= current_user.name %></span>
@@ -73,13 +73,13 @@
             </li>
 
           <% else %>
-            <li class="nav-item mr-4 mt-2">
+            <li class="nav-item mr-4 mt-2 font-type1">
               <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class:'nav-link text-white btn btn-secondary' %>
             </li>
-            <li class="nav-item mr-4 mt-2">
+            <li class="nav-item mr-4 mt-2 font-type1">
               <%= link_to "ログイン",new_user_session_path, class: 'nav-link text-white btn btn-primary' %>
             </li>
-            <li class="nav-item mr-4 mt-2">
+            <li class="nav-item mr-4 mt-2 font-type1">
               <%= link_to "新規登録",new_user_registration_path, class: 'nav-link text-white btn btn-success' %>
             </li>
             <li class="nav-item mr-5 mt-2">
