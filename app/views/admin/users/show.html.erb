@@ -24,9 +24,9 @@
         <th style="width:200px; height:50px;">会員ステータス</th>
         <td>
           <%= f.radio_button :is_deleted,false %>
-          <%= f.label :is_deleted,"有効" %>
+          <%= f.label :is_deleted,"有効", value: false %>
           <%= f.radio_button :is_deleted,true ,class:'ml-3' %>
-          <%= f.label :is_deleted,"退会" %>
+          <%= f.label :is_deleted,"退会", value: true %>
         </td>
       </tr>
       <tr>

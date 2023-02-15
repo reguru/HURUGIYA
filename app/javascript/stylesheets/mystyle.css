@@ -47,3 +47,26 @@
   font-family: serif;
 }
 
+.show-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.edit-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.index-img {
+  width: 200px;
+  height: 165px;
+  object-fit: cover;
+}
+
+.top-img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}

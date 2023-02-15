@@ -41,7 +41,7 @@
           <div class="m-3">
             <% if post.get_image.attached? %>
               <%= link_to post_path(post.id) do %>
-                <%= image_tag post.image[0],:width => '250', :height => '200' %>
+                <%= image_tag post.image[0], class: "top-img" %>
               <% end %>
               <p class="text-dark mt-3 h5">
                 <%= post.name %>

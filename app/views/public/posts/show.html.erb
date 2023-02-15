@@ -23,7 +23,7 @@
   <div class="d-flex flex-row overflow-auto">
     <% if @post.get_image.attached? %>
       <% @post.image.each do |image| %>
-        <%= image_tag image,class: 'my-4 mr-3', size: "200x200" %>
+        <%= image_tag image,class: 'my-4 mr-3 show-img' %>
       <% end %>
     <% end %>
   </div>
@@ -65,7 +65,7 @@
         <%= comment.comment %>
         <span class="ml-auto">
         <% if comment.user == current_user %>
-          <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, class: "btn btn-danger ml-3" %>
+          <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, class: "btn btn-danger ml-3","data-confirm" => "本当に削除しますか？" %>
         <% end %>
         </span>
       </div>
