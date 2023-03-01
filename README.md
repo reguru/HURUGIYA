@@ -24,19 +24,19 @@
 - 自分の店をいろいろな人に知ってもらいたいとき
 - 探している服を見つけたいとき(Instagramなどのリンクから)
 - 自分のおすすめの古着屋を紹介したいとき
-- 
+ 
 ## 設計書
-
+- 詳細設計書：https://docs.google.com/spreadsheets/d/1Id8fdwXeufCmWizepp6NIbxxIfTDJ6vXK6WKKq9cUKs/edit?usp=sharing
+- テーブル定義書：https://docs.google.com/spreadsheets/d/1MOdnoR2gd_uKhar4Ynw6ASVR9Ab1NVA5NJnI3by3RJ4/edit?usp=sharing
 
 ## 機能実装リスト
 https://docs.google.com/spreadsheets/d/1w75eN4xhjffYJVLtTgb0LzBYraU2w_3DhmhzfrJPM5I/edit?usp=sharing
 
 ## 開発環境
-- OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
+- OS：Linux(AmazonLinux2)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL,GitHubActions
+- フレームワーク：Ruby on Rails,Bootstrap
 - JSライブラリ：jQuery
 - IDE：Cloud9
-
-## 使用素材
-- 現在検討中です。
+- インフラ：Ngninx,puma,AWS(EC2,EIP,AMI,RDS,Route53)
+- ネットワーク：VPC
