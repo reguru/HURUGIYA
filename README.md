@@ -34,9 +34,10 @@ https://docs.google.com/spreadsheets/d/1w75eN4xhjffYJVLtTgb0LzBYraU2w_3DhmhzfrJP
 
 ## 開発環境
 - OS：Linux(AmazonLinux2)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL,GitHubActions
+- 言語：HTML,CSS,JavaScript,Ruby
 - フレームワーク：Ruby on Rails,Bootstrap
 - JSライブラリ：jQuery
 - IDE：Cloud9
 - インフラ：Ngninx,puma,AWS(EC2,EIP,AMI,RDS,Route53)
 - ネットワーク：VPC
+- ツール：SQL,GitHubActions,Ajax
