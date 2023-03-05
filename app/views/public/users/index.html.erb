@@ -6,7 +6,7 @@
   <div class="row d-flex flex-row bg-light">
       <% @user_posts.each do |user_post| %>
       <div class="ml-4 my-3 shadow-sm">
-        <%= link_to post_path(user_post) do %>
+        <%= link_to post_path(user_post), class: 'link' do %>
           <%= image_tag user_post.image[0],width: 200,height: 200 %>
           <p class="h6 pt-2 px-2 text-dark" style="width:200px;"><%= user_post.name %></p>
         <% end %>

@@ -20,23 +20,23 @@
     <%= form_with model: @post do |f| %>
     <table class="table table-borderless">
       <tr>
-        <th style="width:200px; height:50px;"></th>
-        <td><%= f.file_field :image, multiple: true, class: "img_field" %></td>
+        <th class="table1"></th>
+        <td><%= f.file_field :image, multiple: true %></td>
       </tr>
       <tr>
-        <th style="width:200px; height:50px;"><%= f.label :"古着屋名" %></th>
+        <th class="table1"><%= f.label :"古着屋名" %></th>
         <td><%= f.text_field :name %></td>
       </tr>
       <tr>
-        <th style="width:200px; height:50px;"><%= f.label :"住所" %></th>
+        <th class="table1"><%= f.label :"住所" %></th>
         <td><%= f.text_field :address,size: 47 %></td>
       </tr>
       <tr>
-        <th style="width:200px; height:50px;"><%= f.label :"紹介文" %></th>
+        <th class="table1"><%= f.label :"紹介文" %></th>
         <td><%= f.text_area :introduction,size: "50x5" %></td>
       </tr>
       <tr>
-        <th style="width:200px; height:50px;"><%= f.label :"系統" %></th>
+        <th class="table1"><%= f.label :"系統" %></th>
         <td>
           <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
             <div class="form-check">
@@ -50,7 +50,7 @@
       </tr>
       <tr>
         <th></th>
-        <td><%= f.submit "投稿する", class: "submit1 btn btn-success" %></td>
+        <td id="submit"><%= f.submit "投稿する", class: "submit1 btn btn-success" %></td>
       </tr>
     </table>
     <% end %>

@@ -82,3 +82,8 @@
 .link {
   text-decoration: none !important;
 }
+
+.table1 {
+  width: 200px; 
+  height: 50px;
+}
