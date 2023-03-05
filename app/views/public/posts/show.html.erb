@@ -9,8 +9,8 @@
     <div class="col-md-10 col-sm-9 col-8">
       <h2><%= @post.name %></h2>
     </div>
-    <div class="col-md-2 col-sm-3 col-4" id=<%= "favorite-" + @post.id.to_s %>>
-      <%= render "favorite", post: @post %>
+    <div class="col-md-2 col-sm-3 col-4 favorite-btn" >
+      <%= render "public/favorites/favorite", post: @post %>
     </div>
   </div>
 
@@ -47,29 +47,12 @@
     <%= image_tag current_user.get_profile_image, class:'rounded-circle', size: "40x40" %>
     <span class="h5 ml-3"><%= current_user.name %></span>
   </div>
+
   <div class="row mt-3 ml-2">
-    <% unless current_user.name == "ゲスト" %>
-      <%= form_with model: [@post, @comment] do |f| %>
-        <%= f.text_area :comment, placeholder:"コメントをここに", size: "30x2" %>
-        <%= f.submit "送信する" ,class: "btn btn-secondary" %>
-      <% end %>
-    <% end %>
+    <%= render "public/comments/form", post: @post, comment: @comment %>
   </div>
-  <div class="row mt-2 border flex-column">
-    <% @post.comments.each do |comment| %>
-    <div class="m-2 ">
-      <%= image_tag comment.user.get_profile_image, class:'rounded-circle', size: "30x30" %>
-      <span class="m-2 h5"><%= comment.user.name %></span>
-      <span class="ml-4 h6"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
-      <div class="ml-5 font1 d-flex bd-highlight">
-        <%= comment.comment %>
-        <span class="ml-auto">
-        <% if comment.user == current_user %>
-          <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, class: "btn btn-danger ml-3","data-confirm" => "本当に削除しますか？" %>
-        <% end %>
-        </span>
-      </div>
-    </div>
-    <% end %>
+
+  <div class="row mt-2 border flex-column comment-btn">
+    <%= render "public/comments/index", post: @post %>
   </div>
 </div>

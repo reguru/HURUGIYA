@@ -70,3 +70,15 @@
   height: 200px;
   object-fit: cover;
 }
+
+.heart {
+  color: red;
+}
+
+.comment {
+  color: gray;
+}
+
+.link {
+  text-decoration: none !important;
+}

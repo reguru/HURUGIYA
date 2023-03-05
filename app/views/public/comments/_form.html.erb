@@ -1,0 +1,6 @@
+<% unless current_user.name == "ゲスト" %>
+  <%= form_with model: [post, comment], local: false do |f| %>
+    <%= f.text_area :comment, placeholder:"コメントをここに", size: "30x2", class: "comment-textarea" %>
+    <%= f.submit "送信する" ,class: "btn btn-secondary" %>
+  <% end %>
+<% end %>

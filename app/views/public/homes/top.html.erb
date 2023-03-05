@@ -7,30 +7,7 @@
     <div class="container">
       <h3 class="font-type1">タグ検索</h3>
       <div class="d-flex flex-row overflow-auto border-bottom">
-        <%= link_to posts_path({tag_id:1}),class: 'm-3' do %>
-          <%= image_tag 'IMG_7530.JPG',size: "150x150" %>
-          <p class="text-dark text-center">ストリート系</p>
-        <% end %>
-        <%= link_to posts_path({tag_id:2}),class: 'm-3' do %>
-          <%= image_tag 'IMG_7531.JPG',size: "150x150" %>
-          <p class="text-dark text-center">アメカジ系</p>
-        <% end %>
-        <%= link_to posts_path({tag_id:3}),class: 'm-3' do %>
-          <%= image_tag 'IMG_7532.JPG',size: "150x150" %>
-          <p class="text-dark text-center">ミリタリー系</p>
-        <% end %>
-        <%= link_to posts_path({tag_id:4}),class: 'm-3' do %>
-          <%= image_tag 'IMG_7533.JPG',size: "150x150" %>
-          <p class="text-dark text-center">ヨーロッパ古着系</p>
-        <% end %>
-        <%= link_to posts_path({tag_id:5}),class: 'm-3' do %>
-          <%= image_tag 'IMG_7534.JPG',size: "150x150" %>
-          <p class="text-dark text-center">きれいめカジュアル系</p>
-        <% end %>
-        <%= link_to posts_path({tag_id:6}),class: 'm-3' do %>
-          <%= image_tag 'IMG_7535.JPG',size: "150x150" %>
-          <p class="text-dark text-center">ワーク系</p>
-        <% end %>
+        <%= render "public/homes/tag" %>
       </div>
     </div>
 
