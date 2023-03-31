@@ -10,32 +10,30 @@
   </div>
 
   <% @posts.each do |posts| %>
-  <div class="row mt-3 shadow-sm border" >
-    <div class="col-md-3">
-      <% if posts.get_image.attached? %>
-        <%= link_to post_path(posts.id) do %>
-          <%= image_tag posts.image[0], class: "index-img" %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= link_to post_path(posts.id), class: 'link' do %>
+      <div class="row mt-3 shadow-sm border" >
+        <div class="col-md-3">
+          <% if posts.get_image.attached? %>
+            <%= image_tag posts.image[0], class: "index-img" %>
+          <% end %>
+        </div>
 
-    <div class="col-md-7">
-      <%= link_to post_path(posts.id),class: 'text-dark' do %>
-        <p class="h3 mt-2"><%= posts.name %></p>
-      <% end %>
-      <p class="h6 "><%= posts.address %></p>
-      <p class="h5 mt-3 mr-5">
-        <%= truncate(posts.introduction,length: 50) %>
-      </p>
-    </div>
+        <div class="col-md-7">
+          <p class="h3 mt-2"><%= posts.name %></p>
+          <p class="h6 "><%= posts.address %></p>
+          <p class="h5 mt-3 mr-5">
+            <%= truncate(posts.introduction,length: 50) %>
+          </p>
+        </div>
 
-    <div class="col-md-2 mt-5">
-      <i class="fas fa-heart heart mr-2"></i><%= posts.favorites.count %><br>
-      <i class="fas fa-comment comment mr-2"></i><%= posts.comments.count %><br>
-      <%= posts.user.name %><br>
-      <%= posts.created_at.strftime('%Y/%m/%d') %>
-    </div>
-  </div>
+        <div class="col-md-2 mt-5 text-dark">
+          <i class="fas fa-heart heart mr-2"></i><%= posts.favorites.count %><br>
+          <i class="fas fa-comment comment mr-2"></i><%= posts.comments.count %><br>
+          <%= posts.user.name %><br>
+          <%= posts.created_at.strftime('%Y/%m/%d') %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="d-flex justify-content-center mt-5">
