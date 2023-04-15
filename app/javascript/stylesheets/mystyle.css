@@ -91,3 +91,23 @@
 p {
   color: black;
 }
+
+.top-image {
+  background-image: url("../images/IMG_804.jpg");
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-color {
+  background-color: #EEEEEE;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+}
+
+.index-color {
+  background-color: white;
+}

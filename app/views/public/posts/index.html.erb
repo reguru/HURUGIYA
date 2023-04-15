@@ -1,5 +1,6 @@
+<div class="top-image">
 <div class="container">
-  <div class="text-center mt-5">
+  <div class="text-center pt-5">
     <%= render 'layouts/search' %><br>
     <%= form_tag posts_path, method: :get,class: 'boards_searchForm' do %>
       <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
@@ -11,7 +12,7 @@
 
   <% @posts.each do |posts| %>
     <%= link_to post_path(posts.id), class: 'link' do %>
-      <div class="row mt-3 shadow-sm border" >
+      <div class="row mt-3 shadow-sm border index-color" >
         <div class="col-md-3">
           <% if posts.get_image.attached? %>
             <%= image_tag posts.image[0], class: "index-img" %>
@@ -39,4 +40,5 @@
   <div class="d-flex justify-content-center mt-5">
     <%= paginate @posts %>
   </div>
+</div>
 </div>
