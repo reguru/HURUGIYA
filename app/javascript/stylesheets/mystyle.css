@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .submit1 {
   width: 200px;
   height: 40px;
@@ -94,9 +100,11 @@ p {
 
 .top-image {
   background-image: url("../images/IMG_804.jpg");
-  height: 800px;
+  width: 100%;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .bg-color {
@@ -109,5 +117,9 @@ footer {
 }
 
 .index-color {
+  background-color: white;
+}
+
+.about-color {
   background-color: white;
 }
