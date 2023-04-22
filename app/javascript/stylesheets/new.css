@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .new-image {
   background-image: url("../images/IMG_807.jpg");
   width: 100%;
@@ -15,24 +9,68 @@
 
 .new-bg {
   background-color: #eee;
-  width: 850px;
+  width: 700px;
   margin: 0 auto;
   border: 10px #444 solid;
   box-sizing: border-box;
 }
 
+#post_name {
+  width: 185px;
+}
+
+#post_address {
+  width: 300px;
+}
+
+#post_introduction {
+  width: 300px;
+  height: 80px;
+  
+}
+
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+  .new-bg {
+    width: 550px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .new-bg {
     width: 300px;
-    border: 2px #444 solid;
-    box-sizing: border-box;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .new-image label {
+    font-size: 12px;
   }
   
-  .table1 {
-    width: 100px;
-    height: 25px;
-    font-size: 15px;
+  .new-image .submit1 {
+    width: 150px;
   }
-  
-  
+
+  #post_image {
+    width: 140px;
+  }
+
+  #post_name {
+    width: 120px;
+  }
+
+  #post_address {
+    width: 180px;
+  }
+
+  #post_introduction {
+    width: 180px;
+    height: 80px;
+  }
 }
