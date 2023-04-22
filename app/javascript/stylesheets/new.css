@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.new-image {
+  background-image: url("../images/IMG_807.jpg");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.new-bg {
+  background-color: #eee;
+  width: 850px;
+  margin: 0 auto;
+  border: 10px #444 solid;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 425px) {
+  .new-bg {
+    width: 300px;
+    border: 2px #444 solid;
+    box-sizing: border-box;
+  }
+  
+  .table1 {
+    width: 100px;
+    height: 25px;
+    font-size: 15px;
+  }
+  
+  
+}

@@ -15,6 +15,8 @@ import '@fortawesome/fontawesome-free/js/all'
 import './preview'
 import '../stylesheets/mystyle.css'
 import '../stylesheets/top.css'
+import '../stylesheets/index.css'
+import '../stylesheets/new.css'
 
 Rails.start()
 Turbolinks.start()
