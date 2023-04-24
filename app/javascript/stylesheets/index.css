@@ -1,0 +1,73 @@
+.index-img {
+  width: 200px;
+  height: 165px;
+  object-fit: cover;
+}
+
+.index-color {
+  background-color: white;
+}
+
+.index1 {
+  height: 60px;
+}
+
+.index .h5 {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .index-img {
+    width: 120px;
+    height: 110px;
+  }
+
+  .index .h3 {
+    font-size: 24px;
+  }
+
+  .index .h6 {
+    font-size: 11px;
+  }
+
+  .index .h5 {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .post-name, .post-day {
+    font-size: 12px;
+  }
+
+  .index1 {
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .index-img {
+    width: 80px;
+    height: 75px;
+  }
+
+  .index .h3 {
+    font-size: 15px;
+  }
+
+  .index .h6 {
+    font-size: 11px;
+  }
+
+  .index .h5 {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .post-name, .post-day {
+    font-size: 12px;
+  }
+
+  .index1 {
+    height: 10px;
+  }
+}

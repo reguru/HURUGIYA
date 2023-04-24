@@ -11,8 +11,13 @@
   background-color: #eee;
   width: 700px;
   margin: 0 auto;
-  border: 10px #444 solid;
+  border: 4px #444 solid;
   box-sizing: border-box;
+}
+
+.new-inner {
+  margin: 10px 13px;
+  border: 3px #444 solid;
 }
 
 #post_name {
@@ -26,7 +31,7 @@
 #post_introduction {
   width: 300px;
   height: 80px;
-  
+
 }
 
 
@@ -45,6 +50,10 @@
     width: 300px;
   }
 
+  .new-inner {
+    margin: 2px 3px;
+  }
+
   h3 {
     font-size: 24px;
   }
@@ -52,7 +61,7 @@
   .new-image label {
     font-size: 12px;
   }
-  
+
   .new-image .submit1 {
     width: 150px;
   }
