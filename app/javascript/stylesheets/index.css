@@ -1,11 +1,20 @@
-.index-img {
+.index-image {
+  background-image: url(../images/IMG_808.jpg);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.post-img {
   width: 200px;
   height: 165px;
   object-fit: cover;
 }
 
 .index-color {
-  background-color: white;
+  background-color: #eee;
 }
 
 .index1 {
@@ -17,7 +26,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .index-img {
+  .post-img {
     width: 120px;
     height: 110px;
   }
@@ -45,9 +54,10 @@
 }
 
 @media screen and (max-width: 425px) {
-  .index-img {
-    width: 80px;
-    height: 75px;
+  .post-img {
+    margin-top: 8px;
+    width: 95px;
+    height: 90px;
   }
 
   .index .h3 {
@@ -55,19 +65,27 @@
   }
 
   .index .h6 {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .index .h5 {
-    font-size: 13px;
+    font-size: 10px;
     margin-top: 10px;
   }
 
   .post-name, .post-day {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .index1 {
     height: 10px;
+  }
+  
+  .post-heart, .post-comment {
+    font-size: 10px;
+  }
+  
+  .index .container {
+    width: 95%;
   }
 }

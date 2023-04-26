@@ -1,43 +1,53 @@
-<div class="container index">
-  <div class="text-center pt-5">
-    <%= render 'layouts/search' %><br>
-    <%= form_tag posts_path, method: :get,class: 'boards_searchForm' do %>
-      <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
-      {
-        prompt: 'タグで絞り込み検索',
-        onchange: 'submit(this.form);'} %>
+<div class="index-image index">
+  <div class="container">
+    <div class="text-center pt-5">
+      <%= render 'layouts/search' %><br>
+      <%= form_tag posts_path, method: :get,class: 'boards_searchForm' do %>
+        <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+        {
+          prompt: 'タグで絞り込み検索',
+          onchange: 'submit(this.form);'} %>
+      <% end %>
+    </div>
+  
+    <% @posts.each do |posts| %>
+      <%= link_to post_path(posts.id), class: 'link' do %>
+        <div class="row mt-3 shadow-sm border index-color" >
+          <div class="col-md-3 col-sm-3 col-3">
+            <% if posts.get_image.attached? %>
+              <%= image_tag posts.image[0], class: "post-img" %>
+            <% end %>
+          </div>
+  
+          <div class="col-md-7 col-sm-7 col-7">
+            <p class="h3 mt-2"><%= posts.name %></p>
+            <p class="h6 "><%= posts.address %></p>
+            <p class="h5">
+              <%= truncate(posts.introduction,length: 50) %>
+            </p>
+          </div>
+  
+          <div class="col-md-2 col-sm-2 col-2 text-dark">
+            <div class="index1"></div>
+            <span class="post-heart">
+              <i class="fas fa-heart heart mr-2"></i><%= posts.favorites.count %>
+            </span><br>
+            <span class="post-comment">
+              <i class="fas fa-comment comment mr-2"></i><%= posts.comments.count %>
+            </span><br>
+            <span class="post-name">
+              <%= posts.user.name %>
+            </span><br>
+            <span class="post-day">
+              <%= posts.created_at.strftime('%Y/%m/%d') %>
+            </span>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  </div>
-
-  <% @posts.each do |posts| %>
-    <%= link_to post_path(posts.id), class: 'link' do %>
-      <div class="row mt-3 shadow-sm border index-color" >
-        <div class="col-md-3 col-sm-3 col-3">
-          <% if posts.get_image.attached? %>
-            <%= image_tag posts.image[0], class: "index-img" %>
-          <% end %>
-        </div>
-
-        <div class="col-md-7 col-sm-7 col-7">
-          <p class="h3 mt-2"><%= posts.name %></p>
-          <p class="h6 "><%= posts.address %></p>
-          <p class="h5">
-            <%= truncate(posts.introduction,length: 50) %>
-          </p>
-        </div>
-
-        <div class="col-md-2 col-sm-2 col-2 text-dark">
-          <div class="index1"></div>
-          <i class="fas fa-heart heart mr-2"></i><%= posts.favorites.count %><br>
-          <i class="fas fa-comment comment mr-2"></i><%= posts.comments.count %><br>
-          <span class="post-name"><%= posts.user.name %></span><br>
-          <span class="post-day"><%= posts.created_at.strftime('%Y/%m/%d') %></span>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-
-  <div class="d-flex justify-content-center mt-5">
-    <%= paginate @posts %>
+  
+    <div class="d-flex justify-content-center mt-5">
+      <%= paginate @posts %>
+    </div>
   </div>
 </div>
