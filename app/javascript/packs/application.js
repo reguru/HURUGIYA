@@ -17,6 +17,7 @@ import '../stylesheets/mystyle.css'
 import '../stylesheets/top.css'
 import '../stylesheets/index.css'
 import '../stylesheets/new.css'
+import '../stylesheets/mypage.css'
 
 Rails.start()
 Turbolinks.start()
