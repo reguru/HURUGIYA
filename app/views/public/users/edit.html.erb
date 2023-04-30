@@ -6,39 +6,45 @@
     <%= form_with model:@user, url: users_mypage_path, method: :patch do |f| %>
       <div class="text-center">
         <% if current_user.profile_image %>
-          <%= image_tag current_user.profile_image, class: "img_prev pf-img" %><br>
+          <%= image_tag current_user.profile_image, class: "img_prev pf-img text-center" %><br>
         <% else %>
-  
+
         <% end %>
-        <%= f.file_field :profile_image, class: "img_field mt-3" %>
       </div>
-  
+
+      <div class="row">
+        <div class="col-md-5 col-sm-5 col-3"></div>
+        <div class="col-md-4 col-sm-4 col-4">
+          <%= f.file_field :profile_image, class: "img_field mt-3" %>
+        </div>
+      </div>
+
       <div class="row mt-5">
         <div class="col-md-3 col-sm-1"></div>
-        <div class="col-md-2 col-sm-4">
-          <%= f.label :"ユーザー名" %>
+        <div class="col-md-2 col-sm-4 col-4">
+          <%= f.label :"ユーザー名" ,class: "text-white" %>
         </div>
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4 col-sm-4 col-4">
           <%= f.text_field :name %>
         </div>
       </div>
-      
+
       <div class="row mt-3">
         <div class="col-md-3 col-sm-1"></div>
-        <div class="col-md-2 col-sm-4">
-          <%= f.label :"メールアドレス" %>
+        <div class="col-md-2 col-sm-4 col-4">
+          <%= f.label :"メールアドレス" ,class: "text-white" %>
         </div>
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4 col-sm-4 col-4">
           <%= f.email_field :email,size: "40x50" %>
         </div>
       </div>
-      
+
       <div class="row mt-3">
-        <div class="col-md-5 col-sm-5"></div>
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-5 col-sm-5 col-4"></div>
+        <div class="col-md-4 col-sm-4 col-4">
           <%= f.submit "変更を保存する", class: "btn btn-success" %>
         </div>
       </div>
     <% end %>
   </div>
-</div>  
+</div>

@@ -80,12 +80,16 @@
   .index1 {
     height: 10px;
   }
-  
+
   .post-heart, .post-comment {
     font-size: 10px;
   }
-  
+
   .index .container {
     width: 95%;
+  }
+
+  .index .col-3, .col-2 {
+    padding-left: 3px;
   }
 }

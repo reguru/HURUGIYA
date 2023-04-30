@@ -26,3 +26,17 @@
   width: 100%;
   background-color: white;
 }
+
+@media screen and (max-width: 425px) {
+  #user_name {
+    width: 170px;
+  }
+  
+  #user_email {
+    width: 250px;
+  }
+  
+  .mypage .col-4 {
+    padding-right: 10px;
+  }
+}

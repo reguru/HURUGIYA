@@ -9,7 +9,7 @@
           onchange: 'submit(this.form);'} %>
       <% end %>
     </div>
-  
+
     <% @posts.each do |posts| %>
       <%= link_to post_path(posts.id), class: 'link' do %>
         <div class="row mt-3 shadow-sm border index-color" >
@@ -18,7 +18,7 @@
               <%= image_tag posts.image[0], class: "post-img" %>
             <% end %>
           </div>
-  
+
           <div class="col-md-7 col-sm-7 col-7">
             <p class="h3 mt-2"><%= posts.name %></p>
             <p class="h6 "><%= posts.address %></p>
@@ -26,7 +26,7 @@
               <%= truncate(posts.introduction,length: 50) %>
             </p>
           </div>
-  
+
           <div class="col-md-2 col-sm-2 col-2 text-dark">
             <div class="index1"></div>
             <span class="post-heart">
@@ -45,7 +45,7 @@
         </div>
       <% end %>
     <% end %>
-  
+
     <div class="d-flex justify-content-center mt-5">
       <%= paginate @posts %>
     </div>
