@@ -1,22 +1,33 @@
-<div class="container">
-  <div class="text-center m-5 font-type1">
-    <h3>いいね一覧</h3>
-  </div>
-
-  <div class="row bg-light">
-      <% @favorite_posts.each do |post| %>
-      <div class="ml-4 my-3 shadow-sm">
-        <%= link_to post_path(post.id), class: 'link' do %>
-          <%= image_tag post.image[0],width: 200,height: 200 %>
-          <p class="h6 pt-2 px-2 text-dark" style="width:200px;"><%= post.name %></p>
+<div class="my-index">
+  <% if @favorite_posts.present? %>
+  <div class="mypage-image">
+    <div class="container">
+      <div class="text-center p-5 font-type1 text-white">
+        <h3>いいね一覧</h3>
+      </div>
+    
+      <div class="row fav-bg d-flex justify-content-center">
+        <% @favorite_posts.each do |post| %>
+        <div class="shadow-sm fav1">
+          <%= link_to post_path(post.id), class: 'link' do %>
+            <%= image_tag post.image[0], class: "my-img" %>
+            <p class="h6 pt-2 px-2 text-dark"><%= post.name %></p>
+          <% end %>
+        </div>
         <% end %>
       </div>
-      <% end %>
+    
+      <div class="d-flex justify-content-center pt-5">
+        <%= paginate @favorite_posts %>
+      </div>
+    </div>
   </div>
-
-  <div class="d-flex justify-content-center mt-5">
-    <%= paginate @favorite_posts %>
-  </div>
+  
+  <% else %>
+    <div class="mypage-image" style="height: 700px">
+      <div class="text-center p-5 font-type1 text-white">
+        <h3>いいね一覧</h3>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-

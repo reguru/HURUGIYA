@@ -1,20 +1,21 @@
-<div class="container">
-  <div class="text-center mt-5">
-    <h3>本当に退会しますか？</h3>
-  </div>
-  <div class="text-center mt-5">
-    <p>退会すると,投稿は残りますが、機能をすべて失います。</p>
-    <p>再ログインをする場合は、新規登録から行う必要があります。</p>
-    <p>退会する場合は、「退会する」をクリックしてください。</p>
-  </div>
-  <div class="row mt-5">
-    <div class="col-4"></div>
-    <div class="col-2">
-      <%= link_to "退会しない",users_mypage_path, class: "btn btn-primary" %>
+<div class="mypage-image quit">
+  <div style="height: 150px"></div>
+  <div class="container bg-color py-5">
+    <div class="text-center">
+      <h3 class="text-b">本当に退会しますか？</h3>
     </div>
-    <div class="col-1"></div>
-    <div class="col-5">
-      <%= link_to "退会する",users_quit_path, method: :patch, class: "btn btn-danger","data-confirm" => "本当に退会しますか？" %>
+    <div class="text-center mt-5">
+      <p>退会すると,投稿は残りますが、機能をすべて失います。</p>
+      <p>再ログインをする場合は、新規登録から行う必要があります。</p>
+      <p>退会する場合は、「退会する」をクリックしてください。</p>
+    </div>
+    <div class="mt-5 d-flex justify-content-center">
+      <div>
+        <%= link_to "退会しない",users_mypage_path, class: "btn btn-primary mr-5" %>
+      </div>
+      <div>
+        <%= link_to "退会する",users_quit_path, method: :patch, class: "btn btn-danger ml-5","data-confirm" => "本当に退会しますか？" %>
+      </div>
     </div>
   </div>
 </div>

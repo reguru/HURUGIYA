@@ -1,4 +1,4 @@
-<div>
+<div class="top-image">
   <% if user_signed_in? %>
     <div class="container pt-5">
       <h3 class="font-type1 text-center">タグ検索</h3>
@@ -7,11 +7,11 @@
       </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container py-5">
       <h3 class="font-type1 text-center">最新の投稿</h3>
       <div class="d-flex flex-row overflow-auto">
         <% @posts.each do |post| %>
-          <div class="m-3">
+          <div class="top-bg m-3">
             <% if post.get_image.attached? %>
               <%= link_to post_path(post.id) do %>
                 <%= image_tag post.image[0], class: "top-img" %>
@@ -29,7 +29,6 @@
     </div>
 
   <% else %>
-    <div class="top-image">
     <div style="height:100px;"></div>
     <div class="text-center m-5" style="height:600px;">
       <h2>HURUGIYAへようこそ。</h2><br>
@@ -38,7 +37,6 @@
         <%= link_to "ログイン",new_user_session_path, class:"btn btn-primary mr-5 submit1" %>
         <%= link_to "新規登録",new_user_registration_path, class:"btn btn-success submit1" %>
       </div>
-    </div>
     </div>
   <% end %>
 </div>

@@ -27,16 +27,71 @@
   background-color: white;
 }
 
+.fav-bg {
+  background-color: #eee;
+  padding: 20px 10px;
+}
+
+ .quit .container {
+  width: 90%;
+}
+
+.my-index .mypage-image {
+  height: 100%;
+}
+
+.my-img {
+  width: 200px;
+  height: 200px;
+}
+
+.fav1 {
+  margin: 10px 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .my-img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .my-img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .my-index .container {
+    width: 90%;
+  }
+  
+  .fav1 {
+    margin: 5px 5px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   #user_name {
     width: 170px;
   }
-  
+
   #user_email {
     width: 250px;
   }
-  
+
   .mypage .col-4 {
     padding-right: 10px;
   }
+  
+  /*いいねした投稿と自分の投稿*/
+  .my-img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .my-index .h6 {
+    font-size: 12px;
+  }
+  
 }
