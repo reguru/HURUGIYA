@@ -1,0 +1,17 @@
+<% if @post.twitter.present? %>
+  <%= link_to @post.twitter, target: :_blank do %>
+    <i class="fab fa-twitter"></i>
+  <% end %>
+<% end %>
+
+<% if @post.facebook.present? %>
+  <%= link_to @post.facebook, target: :_blank do %>
+    <i class="fab fa-facebook"></i>
+  <% end %>
+<% end %>
+
+<% if @post.instagram.present? %>
+  <%= link_to @post.instagram, target: :_blank do %>
+    <i class="fab fa-instagram"></i>
+  <% end %>
+<% end %>
