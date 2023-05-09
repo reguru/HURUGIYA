@@ -1,17 +1,23 @@
-<% if @post.twitter.present? %>
-  <%= link_to @post.twitter, target: :_blank do %>
-    <i class="fab fa-twitter"></i>
+<div class="snsicon">
+  <% if @post.twitter.present? %>
+    <%= link_to @post.twitter, target: :_blank do %>
+      <i class="fab fa-twitter"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<% if @post.facebook.present? %>
-  <%= link_to @post.facebook, target: :_blank do %>
-    <i class="fab fa-facebook"></i>
+<div class="snsicon">
+  <% if @post.facebook.present? %>
+    <%= link_to @post.facebook, target: :_blank do %>
+      <i class="fab fa-facebook"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<% if @post.instagram.present? %>
-  <%= link_to @post.instagram, target: :_blank do %>
-    <i class="fab fa-instagram"></i>
+<div class="snsicon">
+  <% if @post.instagram.present? %>
+    <%= link_to @post.instagram, target: :_blank do %>
+      <i class="fab fa-instagram"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>

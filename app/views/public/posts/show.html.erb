@@ -7,7 +7,7 @@
 
   <div class="row">
     <div class="snslink col-md-10 col-sm-9 col-8">
-      <h2><%= @post.name %></h2>
+      <h2 class="p-name"><%= @post.name %></h2>
       <%= render "public/posts/sns", post: @post %>
     </div>
     <div class="col-md-2 col-sm-3 col-4 favorite-btn" >
@@ -29,15 +29,17 @@
     <% end %>
   </div>
 
-  <div class="row my-4 ">
-    <div class="col-md-7 mb-4 font1">
+  <div class="my-4 ">
+    <div class="mb-4 font1">
       <%= @post.introduction %>
     </div>
-    <div class="col-md-1"></div>
-    <ul class="col-md-3 ml-2">
-      <p>~系統~</p>
+  </div>
+  
+  <div class="tag-list">
+    <p>~系統~</p>
+    <ul>
       <% @post.tags.each do |tag| %>
-        <li><%= tag.name %></li>
+        <li class="tag-list-item"><%= tag.name %></li>
       <% end %>
     </ul>
   </div>

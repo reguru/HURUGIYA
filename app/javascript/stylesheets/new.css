@@ -31,9 +31,22 @@
 #post_introduction {
   width: 300px;
   height: 80px;
-
 }
 
+#post_twitter {
+  width: 300px;
+  height: 30px;
+}
+
+#post_facebook {
+  width: 300px;
+  height: 30px;
+}
+
+#post_instagram {
+  width: 300px;
+  height: 30px;
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -81,5 +94,20 @@
   #post_introduction {
     width: 180px;
     height: 80px;
+  }
+
+  #post_twitter {
+    width: 180px;
+    height: 30px;
+  }
+
+  #post_facebook {
+    width: 180px;
+    height: 30px;
+  }
+
+  #post_instagram {
+    width: 180px;
+    height: 30px;
   }
 }
