@@ -12,15 +12,21 @@ Admin.create(
   )
 
 Tag.create([
+  #系統
   {name: 'ストリート系'},
   {name: 'アメカジ系'},
   {name: 'ミリタリー系'},
   {name: 'ヨーロッパ古着系'},
   {name: 'きれいめカジュアル系'},
   {name: 'ワーク系'},
+  # 店の雰囲気
+  {name: '落ち着いている'},
+  {name: '人が多い'},
+  {name: '楽しい'},
+  {name: '明るい'},
+  {name: '暗い'},
   ])
-  
-  
+
 users = User.create!(
   [
     {email: 'olivia@test.com', name: 'Olivia', password: 'password', profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-user1.jpg"), filename:"sample-user1.jpg")},
