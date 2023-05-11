@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :post_shop_tags, dependent: :destroy
+  has_many :shop_tags, through: :post_shop_tags, dependent: :destroy
 
   # geocoded_by :address
   # after_validation :geocode, if: :address_changed?
@@ -12,7 +14,7 @@ class Post < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   #validates :tag_ids, presence: true
-  
+
   has_many_attached :image
 
   def self.looks(word)

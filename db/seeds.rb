@@ -19,6 +19,9 @@ Tag.create([
   {name: 'ヨーロッパ古着系'},
   {name: 'きれいめカジュアル系'},
   {name: 'ワーク系'},
+  ])
+
+ShopTag.create([
   # 店の雰囲気
   {name: '落ち着いている'},
   {name: '人が多い'},

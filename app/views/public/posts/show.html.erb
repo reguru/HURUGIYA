@@ -38,7 +38,7 @@
   <div class="tag-list">
     <p>~系統~</p>
     <ul>
-      <% @post.tags.first(6).each do |tag| %>
+      <% @post.tags.each do |tag| %>
         <li class="tag-list-item"><%= tag.name %></li>
       <% end %>
     </ul>
@@ -47,8 +47,8 @@
   <div class="tag-list">
     <p>~店の雰囲気~</p>
     <ul>
-      <% @post.tags.last(5).each do |tag2| %>
-        <li class="tag-list-item"><%= tag2.name %></li>
+      <% @post.shop_tags.each do |shop_tag| %>
+        <li class="tag-list-item"><%= shop_tag.name %></li>
       <% end %>
     </ul>
   </div>

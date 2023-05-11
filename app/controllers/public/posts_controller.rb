@@ -55,7 +55,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name,:address,:introduction,:twitter,:facebook,:instagram, image:[], tag_ids:[])
+    params.require(:post).permit(:name,:address,:introduction,:twitter,:facebook,:instagram, image:[], tag_ids:[], shop_tag_ids:[])
   end
 
   def guest_check
