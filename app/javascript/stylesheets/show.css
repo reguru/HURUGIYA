@@ -41,3 +41,12 @@
   border: 1px #555 solid;
   border-radius: 8px;
 }
+
+.tag-list .tag-list-item {
+  padding: 5px 25px;
+}
+
+#post_introduction {
+  width: 90%;
+  height: 130px;
+}

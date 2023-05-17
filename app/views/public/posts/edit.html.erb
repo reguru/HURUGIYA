@@ -24,16 +24,15 @@
       <%= f.file_field :image, multiple: true %>
     </div>
 
-    <div class="row">
-      <div class="mt-4">
-        <%= f.text_area :introduction %>
-      </div>
+    <div class="my-4">
+      <%= f.text_area :introduction %>
     </div>
 
     <div class="tag-list">
-      <div class="form-group mt-4">
+      <p>~系統~</p>
+      <div class="my-4">
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-          <div class="form-check" type="radio">
+          <div class="tag-list-item" type="radio">
             <%= tag.label class: 'form-check-label' do %>
               <%= tag.check_box class: 'form-check-input' %>
               <%= tag.text %>
@@ -44,9 +43,10 @@
     </div>
 
     <div class="tag-list">
-      <div class="form-group mt-4">
+      <p>~店の雰囲気~</p>
+      <div class="my-4">
         <%= f.collection_check_boxes(:shop_tag_ids, ShopTag.all, :id, :name) do |shop_tag| %>
-          <div class="form-check" type="radio">
+          <div class="tag-list-item" type="radio">
             <%= shop_tag.label class: 'form-check-label' do %>
               <%= shop_tag.check_box class: 'form-check-input' %>
               <%= shop_tag.text %>
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <table class="table table-borderless">
+    <table class="table table-borderless mt-5">
       <tr>
         <th class="table1">twitter</th>
         <td><%= f.text_area :twitter %></td>
