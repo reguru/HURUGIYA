@@ -44,6 +44,13 @@
   font-weight: bold;
 }
 
+.top-int {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 95px;
+  width: 250px;
+}
+
 @media screen and (max-width: 425px) {
   .box, .box2 {
     width: 300px;

@@ -1,4 +1,5 @@
-<div class="container mt-5">
+<div>
+<div class="container pt-5">
   <div class="d-flex justify-content-end">
     <% if @post.user == current_user %>
       <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
@@ -68,4 +69,5 @@
   <div class="mt-2 border flex-column comment-btn">
     <%= render "public/comments/index", post: @post %>
   </div>
+</div>
 </div>
