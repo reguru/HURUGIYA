@@ -40,8 +40,8 @@ users = User.create!(
 
 Post.create!(
   [
-    {name: 'JUNGLE', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg"), introduction: '大人気の古着屋です。休日にはたくさんのお客さんが店に入っていきます。', user_id: users[0].id, address: '愛知県名古屋市中区大須89-35' },
-    {name: 'バイキング', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg"), introduction: '東京都にある古着屋です。少しわかりにくいところにありますが、様々な古着がおいてあり、定員さんもとても話しやすい方です。', user_id: users[1].id, address: '東京都大東区来門56-1' },
-    {name: 'Underwood', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg"), introduction: 'ヨーロッパ古着好きな方にオススメ！とても多くのヨーロッパ古着が置いてあります！ぜひ行ってみてください！', user_id: users[2].id, address: '神奈川県鎌倉市空座町99-5' }
+    {name: 'JUNGLE', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg"), introduction: '大人気の古着屋です。休日にはたくさんのお客さんが店に入っていきます。', user_id: users[0].id, address: '愛知県名古屋市中村区名駅1丁目1-4', latitude: '-3.7037', longitude: '40.4167' },
+    {name: 'バイキング', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg"), introduction: '東京都にある古着屋です。少しわかりにくいところにありますが、様々な古着がおいてあり、定員さんもとても話しやすい方です。', user_id: users[1].id, address: '東京都千代田区丸の内1丁目', latitude: '153.9807', longitude: '24.2867' },
+    {name: 'Underwood', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg"), introduction: 'ヨーロッパ古着好きな方にオススメ！とても多くのヨーロッパ古着が置いてあります！ぜひ行ってみてください！ 店内もとても雰囲気がよく、店員さんも良い人なのでとても居心地がいいです。 行ったら毎回いいものが置いてあり、毎回買ってしまいます。それほどいいです！', user_id: users[2].id, address: '神奈川県横浜市西区高島2丁目',latitude: '-74.0059', longitude: '40.7127' }
   ]
 )

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
   </head>
 
   <body class="d-flex flex-column vh-100">
@@ -53,6 +53,11 @@
             <li class="nav-item mr-2 mt-2 h5 font-type1">
               <%= link_to posts_path, class: 'nav-link text-dark ' do %>
                 <i class="fas fa-tshirt mr-1"></i>紹介一覧
+              <% end %>
+            </li>
+            <li class="nav-item mr-2 mt-2 h5 font-type1">
+              <%= link_to posts_map_path, class: 'nav-link text-dark ' do %>
+                <i class="fas fa-map-marked-alt mr-1"></i>マップ
               <% end %>
             </li>
             <li class="nav-item mr-2 mt-2 h5 font-type1">

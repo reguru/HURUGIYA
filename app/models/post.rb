@@ -8,8 +8,8 @@ class Post < ApplicationRecord
   has_many :post_shop_tags, dependent: :destroy
   has_many :shop_tags, through: :post_shop_tags, dependent: :destroy
 
-  # geocoded_by :address
-  # after_validation :geocode, if: :address_changed?
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   validates :name, presence: true
   validates :address, presence: true

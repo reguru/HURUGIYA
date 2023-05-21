@@ -49,7 +49,7 @@ class Public::PostsController < ApplicationController
   end
 
   def map
-
+    @posts = Post.all
   end
 
   private

@@ -1,73 +1,79 @@
 <div>
-<div class="container pt-5">
-  <div class="d-flex justify-content-end">
-    <% if @post.user == current_user %>
-      <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
-    <% end %>
-  </div>
-
-  <div class="row">
-    <div class="snslink col-md-10 col-sm-9 col-8">
-      <h2 class="p-name"><%= @post.name %></h2>
-      <%= render "public/posts/sns", post: @post %>
-    </div>
-    <div class="col-md-2 col-sm-3 col-4 favorite-btn" >
-      <%= render "public/favorites/favorite", post: @post %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 h5">
-      <%= @post.address %>
-    </div>
-  </div>
-
-  <div class="d-flex flex-row overflow-auto">
-    <% if @post.get_image.attached? %>
-      <% @post.image.each do |image| %>
-        <%= image_tag image,class: 'my-4 mr-3 show-img' %>
+  <div class="container pt-5">
+    <div class="d-flex justify-content-end">
+      <% if @post.user == current_user %>
+        <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="my-4 ">
-    <div class="mb-4 font1">
-      <%= @post.introduction %>
+    <div class="row">
+      <div class="snslink col-md-10 col-sm-9 col-8">
+        <h2 class="p-name"><%= @post.name %></h2>
+        <%= render "public/posts/sns", post: @post %>
+      </div>
+      <div class="col-md-2 col-sm-3 col-4 favorite-btn" >
+        <%= render "public/favorites/favorite", post: @post %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 h5">
+        <%= @post.address %>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row overflow-auto">
+      <% if @post.get_image.attached? %>
+        <% @post.image.each do |image| %>
+          <%= image_tag image,class: 'my-4 mr-3 show-img' %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="my-4 ">
+      <div class="mb-4 font1">
+        <%= @post.introduction %>
+      </div>
+    </div>
+
+    <div>
+      <p>マップ</p>
+      <%= render 'public/posts/map', post: @post %>
+    </div>
+
+    <div class="tag-list">
+      <p>~系統~</p>
+      <ul>
+        <% @post.tags.each do |tag| %>
+          <li class="tag-list-item"><%= tag.name %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tag-list">
+      <p>~店の雰囲気~</p>
+      <ul>
+        <% @post.shop_tags.each do |shop_tag| %>
+          <li class="tag-list-item"><%= shop_tag.name %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="border-top">
+      <p class="h5 ml-2 my-3">コメント(<%= @post.comments.count %>)</p>
+    </div>
+    <div class="ml-2">
+      <%= image_tag current_user.get_profile_image, class:'rounded-circle', size: "40x40" %>
+      <span class="h5 ml-3"><%= current_user.name %></span>
+    </div>
+
+    <div class="mt-3 ml-2">
+      <%= render "public/comments/form", post: @post, comment: @comment %>
+    </div>
+
+    <div class="mt-2 border flex-column comment-btn">
+      <%= render "public/comments/index", post: @post %>
     </div>
   </div>
 
-  <div class="tag-list">
-    <p>~系統~</p>
-    <ul>
-      <% @post.tags.each do |tag| %>
-        <li class="tag-list-item"><%= tag.name %></li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="tag-list">
-    <p>~店の雰囲気~</p>
-    <ul>
-      <% @post.shop_tags.each do |shop_tag| %>
-        <li class="tag-list-item"><%= shop_tag.name %></li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="border-top">
-    <p class="h5 ml-2 my-3">コメント(<%= @post.comments.count %>)</p>
-  </div>
-  <div class="ml-2">
-    <%= image_tag current_user.get_profile_image, class:'rounded-circle', size: "40x40" %>
-    <span class="h5 ml-3"><%= current_user.name %></span>
-  </div>
-
-  <div class="mt-3 ml-2">
-    <%= render "public/comments/form", post: @post, comment: @comment %>
-  </div>
-
-  <div class="mt-2 border flex-column comment-btn">
-    <%= render "public/comments/index", post: @post %>
-  </div>
-</div>
 </div>

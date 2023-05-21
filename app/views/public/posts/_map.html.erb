@@ -1,0 +1,19 @@
+  <div id="show_map"></div>
+  <script>
+    let map
+    let marker
+    function initMap(){
+      geocoder = new google.maps.Geocoder()
+
+      map = new google.maps.Map(document.getElementById('show_map'), {
+        center: {lat: <%= post.latitude %>, lng: <%= post.longitude %>},
+        zoom: 18,
+      });
+
+      marker = new google.maps.Marker({
+        position: {lat: <%= post.latitude %>, lng: <%= post.longitude %>},
+        map: map
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>

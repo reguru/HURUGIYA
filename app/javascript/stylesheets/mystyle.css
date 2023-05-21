@@ -105,3 +105,13 @@ footer {
 .about-color {
   background-color: white;
 }
+
+#map {
+  width: 80%;
+  height: 700px;
+}
+
+#show_map {
+  width: 200px;
+  height: 200px;
+}
