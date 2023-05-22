@@ -20,6 +20,7 @@ import '../stylesheets/new.css'
 import '../stylesheets/mypage.css'
 import '../stylesheets/show.css'
 import '../stylesheets/edit.css'
+import '../stylesheets/map.css'
 
 Rails.start()
 // Turbolinks.start()

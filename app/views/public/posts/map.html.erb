@@ -1,4 +1,8 @@
-<div id="map"></div>
+<div class="top-image">
+  <div class="map">
+    <div id="map"></div>
+  </div>
+</div>
 <script>
 function initMap() {
   //初期位置
@@ -14,7 +18,7 @@ function initMap() {
   ];
 
   let map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 5.5,
+    zoom: 5.1,
     styles: styles,
     center: latlng
   });
