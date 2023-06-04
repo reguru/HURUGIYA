@@ -44,12 +44,11 @@
   font-family: serif;
 }
 
-.edit-img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
+.nav-item {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 5px 0px 0px;
 }
-
 
 .top-img {
   width: 250px;

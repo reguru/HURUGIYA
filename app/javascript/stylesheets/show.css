@@ -11,3 +11,15 @@
   height: 200px;
   object-fit: contain;
 }
+
+.show-border {
+  border-top: 2px #eee solid;
+}
+
+.tag-list .col-md-9 {
+  padding-right: 3px;
+}
+
+.tag-list .col-md-3 {
+  padding-left: 0px;
+}
