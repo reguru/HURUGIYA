@@ -44,12 +44,6 @@
   font-family: serif;
 }
 
-.show-img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-}
-
 .edit-img {
   width: 200px;
   height: 200px;
