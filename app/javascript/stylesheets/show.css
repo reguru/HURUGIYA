@@ -23,3 +23,50 @@
 .tag-list .col-md-3 {
   padding-left: 0px;
 }
+
+.show-bg {
+  background-color: #fff;
+  width: 85%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  .show-bg {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .show .font1 {
+    font-size: 17px;
+  }
+
+  .tag-list p {
+    font-size: 15px !important;
+  }
+  
+  .tag-list-item {
+    font-size: 12px;
+  }
+
+  .s-map {
+    margin-left: 15px;
+  }
+  
+  .show .h5 {
+    font-size: 15px;
+  }
+  
+  .show .heart {
+    width: 25px !important;
+  }
+  
+  .show .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
+    width: 20px;
+  }
+  
+  .show .p-name {
+    margin-right: 0px;
+  }
+}
