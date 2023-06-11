@@ -21,6 +21,7 @@ import '../stylesheets/mypage.css'
 import '../stylesheets/show.css'
 import '../stylesheets/edit.css'
 import '../stylesheets/map.css'
+import '../stylesheets/animation.css'
 
 Rails.start()
 // Turbolinks.start()

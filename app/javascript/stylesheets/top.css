@@ -1,13 +1,13 @@
-.box {
-  width: 400px;
-  height: 600px;
-  margin: 0 auto;
-  background-color: white;
-  border: 5px #bbb solid;
-  box-sizing: border-box;
+.top-image {
+  background-image: url("../images/IMG_804.jpg");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-.box2 {
+.box {
   width: 400px;
   height: 100%;
   margin: 0 auto;
@@ -40,6 +40,12 @@
   border: 3px #555 solid;
 }
 
+.top-img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+
 .text-b {
   font-weight: bold;
 }
@@ -49,6 +55,20 @@
   text-overflow: ellipsis;
   height: 95px;
   width: 250px;
+}
+
+.title {
+  display: flex;
+  overflow: hidden;
+  color: #aa8f7b;
+  font-family: 'Josefin Sans', sans-serif;
+  justify-content: center;
+}
+
+.top-submit {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 425px) {
@@ -70,6 +90,16 @@
 
   .about h3 {
     font-size: 24px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .top .submit1 {
+    width: 120px;
+    height: 35px;
+    font-size: 14px;
   }
 
 }
