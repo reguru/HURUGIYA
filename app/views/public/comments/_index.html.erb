@@ -1,15 +1,18 @@
-<% post.comments.each do |comment| %>
-<div class="m-2 ">
-  <%= image_tag comment.user.get_profile_image, class:'rounded-circle', size: "30x30" %>
-  <span class="m-2 h5"><%= comment.user.name %></span>
-  <span class="ml-4 h6"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
-  <div class="ml-5 font1 d-flex bd-highlight">
-    <%= comment.comment %>
-    <span class="ml-auto">
-    <% if comment.user == current_user %>
-      <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, remote: true, class: "btn btn-danger ml-3","data-confirm" => "本当に削除しますか？" %>
-    <% end %>
-    </span>
+<p class="font1 ml-2 mt-4">コメント(<%= post.comments.count %>)</p>
+<div class="comment-border">
+  <% post.comments.each do |comment| %>
+  <div class="m-2">
+    <%= image_tag comment.user.get_profile_image, class:'rounded-circle', size: "30x30" %>
+    <span class="m-2 h5"><%= comment.user.name %></span>
+    <span class="ml-4 h6"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
+    <div class="ml-5 font1 d-flex bd-highlight">
+      <%= comment.comment %>
+      <span class="ml-auto">
+      <% if comment.user == current_user %>
+        <%= link_to "削除",post_comment_path(comment.post,comment), method: :delete, remote: true, class: "btn btn-danger ml-3","data-confirm" => "本当に削除しますか？" %>
+      <% end %>
+      </span>
+    </div>
   </div>
-</div>
 <% end %>
+</div>

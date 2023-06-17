@@ -66,10 +66,8 @@
         </div>
       </div>
 
-      <div class="show-border">
-        <p class="font1 ml-2 mt-4">コメント(<%= @post.comments.count %>)</p>
-      </div>
       <div class="ml-2">
+        <div class="show-border mb-4"></div>
         <%= image_tag current_user.get_profile_image, class:'rounded-circle', size: "40x40" %>
         <span class="font1 ml-3"><%= current_user.name %></span>
       </div>
@@ -78,7 +76,7 @@
         <%= render "public/comments/form", post: @post, comment: @comment %>
       </div>
 
-      <div class="mt-2 border flex-column comment-btn">
+      <div class="mt-2 flex-column comment-btn">
         <%= render "public/comments/index", post: @post %>
       </div>
       <div style="height:80px"></div>

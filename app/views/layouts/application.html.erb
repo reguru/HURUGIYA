@@ -40,7 +40,7 @@
             <li class="nav-item font-type1">
               <% if current_user.name == "ゲスト" %> <!--ゲストログインしているか判断*/-->
                 <div style="pointer-events: none;">
-                  <%= link_to new_post_path, class: 'nav-link text-dark' do %>
+                  <%= link_to new_post_path, class: 'nav-link' do %>
                     <span class="guest1"><i class="fas fa-plus-circle mr-1"></i>新規作成</span>
                   <% end %>
                 </div>
@@ -56,8 +56,16 @@
               <% end %>
             </li>
             <li class="nav-item font-type1">
-              <%= link_to posts_map_path, class: 'nav-link text-dark ' do %>
-                <i class="fas fa-map-marked-alt mr-1"></i>マップ
+              <% if current_user.name == "ゲスト" %>
+                <div style="pointer-events: none;">
+                  <%= link_to posts_map_path, class: 'nav-link' do %>
+                    <span class="guest1"><i class="fas fa-map-marked-alt mr-1"></i>マップ</span>
+                  <% end %>
+                </div>
+              <% else %>
+                <%= link_to posts_map_path, class: 'nav-link text-dark ' do %>
+                  <i class="fas fa-map-marked-alt mr-1"></i>マップ
+                <% end %>
               <% end %>
             </li>
             <li class="nav-item font-type1">
@@ -71,7 +79,7 @@
               <% end %>
             </li>
             <li class="nav-item mr-3 mt-2  font-type1">
-              <%= link_to users_mypage_path, class: 'text-dark' do %>
+              <%= link_to users_mypage_path, class: 'text-dark link' do %>
                 <%= image_tag current_user.get_profile_image,class: 'rounded-circle', size: "35x35" %>
                 <span class="h5"><%= current_user.name %></span>
               <% end %>

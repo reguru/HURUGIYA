@@ -55,3 +55,12 @@
   height: 200px;
   object-fit: contain;
 }
+
+.user_text {
+  color: white;
+  font-weight: bold;
+}
+
+.quit h6 {
+  font-size: 18px;
+}

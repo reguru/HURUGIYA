@@ -16,6 +16,11 @@
   border-top: 2px #eee solid;
 }
 
+.comment-border {
+  border: 1px solid black;
+  padding: 10px;
+}
+
 .tag-list .col-md-9 {
   padding-right: 3px;
 }
@@ -25,16 +30,10 @@
 }
 
 .show-bg {
-  background-color: #fff;
-  width: 85%;
+  background-color: white;
+  width: 80%;
   margin: 0 auto;
   box-sizing: border-box;
-}
-
-@media screen and (max-width: 1024px) {
-  .show-bg {
-    width: 90%;
-  }
 }
 
 @media screen and (max-width: 425px) {
@@ -45,7 +44,7 @@
   .tag-list p {
     font-size: 15px !important;
   }
-  
+
   .tag-list-item {
     font-size: 12px;
   }
@@ -53,19 +52,19 @@
   .s-map {
     margin-left: 15px;
   }
-  
+
   .show .h5 {
     font-size: 15px;
   }
-  
+
   .show .heart {
     width: 25px !important;
   }
-  
+
   .show .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
     width: 20px;
   }
-  
+
   .show .p-name {
     margin-right: 0px;
   }
