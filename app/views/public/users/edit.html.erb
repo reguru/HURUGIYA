@@ -3,20 +3,18 @@
     <div class="text-center p-5 font-type1">
       <h3>プロフィール編集</h3>
     </div>
-    <%= form_with model:@user, url: users_mypage_path, method: :patch do |f| %>
+    <%= form_with model:@user, url: users_mypage_path, method: :patch, multipart: true do |f| %>
       <div class="text-center">
         <% if current_user.profile_image %>
-          <%= image_tag current_user.profile_image, class: "img_prev pf-img text-center" %><br>
+          <%= image_tag current_user.profile_image, class: "img_prev pf-img text-center" %>
         <% else %>
 
         <% end %>
       </div>
 
-      <div class="row">
-        <div class="col-md-5 col-sm-5 col-3"></div>
-        <div class="col-md-4 col-sm-4 col-4">
-          <%= f.file_field :profile_image, class: "img_field mt-3" %>
-        </div>
+      <div class="d-flex justify-content-center up-btn mt-3">
+        <label for="user_profile_image">ファイルを選択</label>
+        <input class="img_field" id="user_profile_image" type="file" name="user[profile_image]">
       </div>
 
       <div class="row mt-5">

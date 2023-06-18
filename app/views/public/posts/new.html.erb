@@ -19,11 +19,14 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <%= form_with model: @post do |f| %>
+        <%= form_with model: @post, multipart: true do |f| %>
         <table class="table table-borderless">
           <tr>
             <th class="table1"></th>
-            <td><%= f.file_field :image, multiple: true %></td>
+            <td class="up-btn">
+              <label for="post_image">ファイルを選択</label>
+              <input id="post_image" type="file" name="post[image][]" multiple="multiple">
+            </td>
           </tr>
           <tr>
             <th class="table1"><%= f.label :"古着屋名" %></th>

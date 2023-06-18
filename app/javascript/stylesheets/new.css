@@ -48,6 +48,32 @@
   height: 30px;
 }
 
+.up-btn input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+}
+
+.up-btn label {
+  position: relative;
+  background-color: royalblue;
+  padding: 8px 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.21);
+  border: 1px solid royalblue;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+  transition: all ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+.up-btn label:hover {
+  background-color: #5a7be0;
+}
+
 @media screen and (max-width: 1024px) {
 
 }
