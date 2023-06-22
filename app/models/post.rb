@@ -11,8 +11,11 @@ class Post < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  FILE_NUMBER_LIMIT = 3
+
   validates :name, presence: true
   validates :address, presence: true
+  validate :validate_files
   #validates :tag_ids, presence: true
 
   has_many_attached :image
@@ -35,6 +38,13 @@ class Post < ApplicationRecord
       image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
     image
+  end
+
+  private
+
+  def validate_files
+    return if image.length <= FILE_NUMBER_LIMIT
+    errors.add(:image, "を添付できる枚数は#{FILE_NUMBER_LIMIT}枚までです。")
   end
 
 end

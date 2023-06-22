@@ -1,6 +1,18 @@
 <div class="top-image">
   <div style="height:20px"></div>
   <div class="container edit-bg pt-5">
+    <div>
+      <% if @post.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger d-flex justify-content-center">
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
     <%= form_with model: @post, multipart: true do |f| %>
       <div class="row">
         <div class="col-md-5">
@@ -79,7 +91,7 @@
           <%= f.submit "更新する",class: 'btn btn-success mr-5' %>
           <%= link_to "削除する",post_path, method: :delete, class: 'btn btn-danger',"data-confirm" => "本当に削除しますか？" %>
         </div>
-        
+
         <div class="m-3">
           <%= link_to "キャンセル",post_path, class: 'btn btn-secondary' %>
         </div>
