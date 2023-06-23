@@ -1,9 +1,11 @@
 /*global $*/
-const CLASSNAME = "-visible";
-const $target1 = $(".title");
+$(function() {
+  const CLASSNAME = "-visible";
+  const $target1 = $(".title");
 
-setInterval(() => {
-  $target1.addClass(CLASSNAME);
+  setInterval(() => {
+    $target1.addClass(CLASSNAME);
+  });
 });
 
 $(function() {

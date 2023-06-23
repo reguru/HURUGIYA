@@ -6,7 +6,7 @@
     <%= form_with model:@user, url: users_mypage_path, method: :patch, multipart: true do |f| %>
       <div class="text-center">
         <% if current_user.profile_image %>
-          <%= image_tag current_user.profile_image, class: "img_prev pf-img text-center" %>
+          <%= image_tag current_user.profile_image, class: "img_prev pf-img" %>
         <% else %>
 
         <% end %>

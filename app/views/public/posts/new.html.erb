@@ -20,12 +20,14 @@
 
       <div class="d-flex justify-content-center">
         <%= form_with model: @post, multipart: true do |f| %>
+        <div class="text-center preview">
+        </div>
         <table class="table table-borderless">
           <tr>
             <th class="table1"></th>
             <td class="up-btn">
               <label for="post_image">ファイルを選択</label>
-              <input id="post_image" type="file" name="post[image][]" multiple="multiple">
+              <input class="img_f" id="post_image" type="file" name="post[image][]" multiple="multiple">
             </td>
           </tr>
           <tr>
