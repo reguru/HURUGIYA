@@ -18,20 +18,9 @@
         <% end %>
       </div>
 
-      <div class="d-flex justify-content-center">
+      <div>
         <%= form_with model: @post, multipart: true do |f| %>
-        <div class="text-center">
-          <%= image_tag 'no_image.jpg', class: 'img_prev new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev1 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev2 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev3 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev4 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev5 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev6 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev7 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev8 new-img' %>
-          <%= image_tag 'no_image.jpg', class: 'img_prev9 new-img' %>
-        </div>
+        <%= render "public/homes/preview" %>
         <table class="table table-borderless">
           <tr>
             <th class="table1"></th>
