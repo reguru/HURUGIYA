@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  FILE_NUMBER_LIMIT = 3
+  FILE_NUMBER_LIMIT = 10
 
   validates :name, presence: true
   validates :address, presence: true

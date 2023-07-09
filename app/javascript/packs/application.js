@@ -13,6 +13,7 @@ import "bootstrap";
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 import './preview'
+import './new-preview'
 import './animation'
 import '../stylesheets/mystyle.css'
 import '../stylesheets/top.css'
