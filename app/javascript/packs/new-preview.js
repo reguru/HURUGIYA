@@ -32,7 +32,7 @@ $(function(){
     //hidden-fieldのidの数値のみ取得
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
     //labelボックスのidとforを更新
-    $('.label-box').attr({id: `label-box-${id}`,for: `post_image_${id}`});
+    // $('.label-box').attr({id: `label-box-${id}`,for: `post_image_${id}`});
     //選択したfileのオブジェクトを取得
     var file = this.files[0];
     var reader = new FileReader();
@@ -53,19 +53,43 @@ $(function(){
       $(`#preview-box_${id} img`).attr('src', `${image}`);
       var count = $('.preview-box').length;
       //プレビューが10個あったらラベルを隠す
-      if (count == 10) {
-        $('.label-content').hide();
+      if (count == 1) {
+        $('.label-box_0').hide();
       }
-      // if (count == 1) {
-      //   $('.label-box1').hide();
-      // }
-
+      if (count == 2) {
+        $('.label-box_1').hide();
+      }
+      if (count == 3) {
+        $('.label-box_2').hide();
+      }
+      if (count == 4) {
+        $('.label-box_3').hide();
+      }
+      if (count == 5) {
+        $('.label-box_4').hide();
+      }
+      if (count == 6) {
+        $('.label-box_5').hide();
+      }
+      if (count == 7) {
+        $('.label-box_6').hide();
+      }
+      if (count == 8) {
+        $('.label-box_7').hide();
+      }
+      if (count == 9) {
+        $('.label-box_8').hide();
+      }
+      if (count == 10) {
+        $('.label-box_9').hide();
+      }
+      
       //ラベルのwidth操作
       setLabel();
       //ラベルのidとforの値を変更
       if(count < 10){
         //プレビューの数でラベルのオプションを更新する
-        $('.label-box').attr({id: `label-box-${count}`,for: `post_image_${count}`});
+        // $('.label-box').attr({id: `label-box-${count}`,for: `post_image_${count}`});
       }
     }
   });
@@ -94,5 +118,37 @@ $(function(){
       //削除された際に、空っぽになったfile_fieldをもう一度入力可能にする
       $('.label-box').attr({id: `label-box-${id}`,for: `post_image_${id}`});
     }
+
+    // if ($('#preview-box_0') == null) {
+    //   $('.label-box_0').show();
+    // }
+    // if ($('#preview-box_1') == null) {
+    //   $('.label-box_1').show();
+    // }
+    // if ($('#preview-box_2') == null) {
+    //   $('.label-box_2').show();
+    // }
+    // if ($('#preview-box_3') == null) {
+    //   $('.label-box_3').show();
+    // }
+    // if ($('#preview-box_4') == null) {
+    //   $('.label-box_4').show();
+    // }
+    // if ($('#preview-box_5') == null) {
+    //   $('.label-box_5').show();
+    // }
+    // if ($('#preview-box_6') == null) {
+    //   $('.label-box_6').show();
+    // }
+    // if ($('#preview-box_7') == null) {
+    //   $('.label-box_7').show();
+    // }
+    // if ($('#preview-box_8') == null) {
+    //   $('.label-box_8').show();
+    // }
+    // if ($('#preview-box_9') == null) {
+    //   $('.label-box_9').show();
+    // }
+    
   });
 });
