@@ -60,65 +60,73 @@
 .post_drop_box_container {
   display: block;
   margin: 16px auto 0;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .prev-content {
+  margin: 0 20px;
   display: flex;
+  overflow: auto;
 }
 
 .prev-content .preview-box {
-  height: 162px;
-  width: 112px;
+  height: 160px;
+  width: 150px;
   margin: 0 15px 10px 0;
 }
 
-.preview-box .upper-box {
-  height: 112px;
+.preview-box .img-box {
+  height: 150px;
   width: 100%;
-  margin: 0 15px 10px 0;
+  position: relative;
 }
 
-.upper-box img {
-  width: 112px;
-  height: 112px;
+.img-box img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }
 
-.preview-box .lower-box {
+.img-box .delete-box {
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  background-color: #aaa;
   display: flex;
-  text-align: center;
-}
-
-.lower-box .update-box, .delete-box {
-  color: #00b0ff;
-  width: 50%;
-  height: 50px;
-  line-height: 50px;
-  border: 1px solid #eee;
-  background: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 85%;
 }
 
 /*投稿エリア*/
 .label-content {
-  margin-bottom: 10px;
-  width: 620px;
-  margin: auto;
+  margin: 10px auto;
+  text-align: center;
 }
 
-.label-content .label-box {
-  display: block;
-  border: 1px dashed #ccc;
+.label-content label {
   position: relative;
-  background: #f5f5f5;
-  width: 100%;
-  height: 162px;
+  background-color: royalblue;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.21);
+  border: solid 1px royalblue;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+  transition: all ease-in-out 0.1s;
   cursor: pointer;
 }
 
 .hidden-content .hidden-field {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 /*======================================================================================*/
