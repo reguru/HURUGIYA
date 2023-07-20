@@ -1,5 +1,4 @@
 /*global $*/
-/*global labelWidth*/
 $(function(){
 
   function buildHTML(count) {

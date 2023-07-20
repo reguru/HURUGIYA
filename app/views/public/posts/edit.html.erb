@@ -29,14 +29,21 @@
       <div class="d-flex flex-row overflow-auto">
         <% if @post.image.attached? %>
           <% @post.image.each do |image| %>
-            <%= image_tag image,class: 'my-4 mr-3 edit-img' %>
+            
+            <div class="preview-box" id="preview-box_${count}">
+              <div class="img-box" >
+                <%= image_tag image,class: 'my-4 mr-3 edit-img' %>
+                <div class="delete-box" id="delete_btn_${count}">
+                  <span>×</span>
+                </div>
+              </div>
+            </div>
           <% end %>
         <% end %>
       </div>
 
       <div class="text-center my-3 up-btn">
-        <label for="post_image">ファイルを選択</label>
-        <input id="post_image" type="file" name="post[image][]" multiple="multiple">
+        <%= render 'public/homes/preview' %>
       </div>
 
       <div class="my-4">
