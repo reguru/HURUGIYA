@@ -26,24 +26,41 @@
         </div>
       </div>
 
-      <div class="d-flex flex-row overflow-auto">
-        <% if @post.image.attached? %>
-          <% @post.image.each do |image| %>
-            
-            <div class="preview-box" id="preview-box_${count}">
-              <div class="img-box" >
-                <%= image_tag image,class: 'my-4 mr-3 edit-img',alt: "preview" %>
-                <div class="delete-box" id="delete_btn_${count}">
-                  <span>×</span>
+      <div class="text-center my-3 up-btn">
+        <div class="post_drop_box_container">
+          <% if @post.image.attached? %>
+            <% @post.image.each do |image| %>
+              <div class="prev-content">
+                <div class="preview-box">
+                  <div class="img-box" >
+                    <%= image_tag image, alt: "preview" %>
+                    <div class="delete-box">
+                      <span>×</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-
-      <div class="text-center my-3 up-btn">
-        <%= render 'public/homes/preview' %>
+          
+          <div class="label-content">
+            <%= f.label :"image_#{@post.image.length}", class: "label-box", id: "label-box-#{@post.image.length}" do %>
+              ファイルを選択
+            <% end %>
+          </div>
+          <div class="hidden-content1">
+            <input class="hidden-field" id="post_image_0" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_1" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_2" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_3" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_4" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_5" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_6" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_7" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_8" type="file" name="post[image][]">
+            <input class="hidden-field" id="post_image_9" type="file" name="post[image][]">
+          </div>
+        </div>
       </div>
 
       <div class="my-4">

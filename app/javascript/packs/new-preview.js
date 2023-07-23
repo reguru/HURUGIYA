@@ -16,13 +16,13 @@ $(function(){
   if (window.location.href.match(/\/posts\/\d+\/edit/)) {
     var prevContent = $('.label-content').prev();
     $('.preview-box').each(function(index, box) {
-      $(box).attr('id', 'preview-box_${index}');
+      $(box).attr('id', `preview-box_${index}`);
     })
 
     $('.delete-box').each(function(index, box) {
-      $(box).attr('id', 'delete_btn_${index}');
+      $(box).attr('id', `delete_btn_${index}`);
     })
-    var count = $('preview-box').length;
+    var count = $('.preview-box').length;
     if (count == 10) {
       $('.label-content').hide();
     }
