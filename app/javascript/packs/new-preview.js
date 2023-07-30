@@ -5,8 +5,10 @@ $(function(){
     var html = `<div class="preview-box" id="preview-box_${count}">
                   <div class="img-box">
                     <img src="" alt="preview">
+                  </div>
+                  <div class="under-box">
                     <div class="delete-box" id="delete_btn_${count}">
-                      <span>×</span>
+                      <i class="fas fa-trash-alt" style="color: #636974;"></i>
                     </div>
                   </div>
                 </div>`
