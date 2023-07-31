@@ -13,15 +13,15 @@
         <% @posts.each do |post| %>
           <div class="top-bg m-3">
             <% if post.get_image.attached? %>
-              <%= link_to post_path(post.id) do %>
+              <%= link_to post_path(post.id), class: "link" do %>
                 <%= image_tag post.image[0], class: "top-img" %>
+                <p class="text-dark mt-3 h5">
+                  <%= post.name %>
+                </p>
+                <p class="top-int mt-3">
+                  <%= post.introduction %>
+                </p>
               <% end %>
-              <p class="text-dark mt-3 h5">
-                <%= post.name %>
-              </p>
-              <p class="top-int mt-3">
-                <%= post.introduction %>
-              </p>
             <% end %>
           </div>
         <% end %>
