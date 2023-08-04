@@ -1,8 +1,13 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :guest_check ,except: [:show]
+  before_action :guest_check ,except: [:mypage]
 
   def show
+    @user = User.find(params[:id])
+    @user_posts = @user.posts.page(params[:page])
+  end
+
+  def mypage
     @user = current_user
   end
 
@@ -51,5 +56,5 @@ class Public::UsersController < ApplicationController
       redirect_to root_path, notice: 'このページを見るには会員登録が必要です。'
     end
   end
-  
+
 end

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get '/about'=>'homes#about'
-    get 'users/mypage'=>'users#show'
+    get 'users/mypage'=>'users#mypage'
     get 'users/mypage/edit'=>'users#edit'
     patch 'users/mypage'=>'users#update'
     get 'users/posts'=>'users#index'
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
     get 'posts/map'
     
-    resources :users, only: [:new] do 
+    resources :users, only: [:new,:show] do 
       member do 
         get :favorites
       end

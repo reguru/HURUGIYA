@@ -7,6 +7,12 @@
         <% end %>
       </div>
 
+      <div class="mb-3">
+        <%= link_to user_path(@post.user_id), class: 'text-dark' do %>
+          <%= image_tag @post.user.get_profile_image, class: 'rounded-circle', size: "40x40" %>
+          <span class="font1 ml-2"><%= @post.user.name %></span>
+        <% end %>
+      </div>
       <div class="row">
         <div class="snslink col-md-10 col-sm-9 col-8">
           <h2 class="p-name"><%= @post.name %></h2>
@@ -68,7 +74,7 @@
 
       <div class="ml-2">
         <div class="show-border mb-4"></div>
-        <%= image_tag current_user.get_profile_image, class:'rounded-circle', size: "40x40" %>
+        <%= image_tag current_user.get_profile_image, class: 'rounded-circle', size: "40x40" %>
         <span class="font1 ml-3"><%= current_user.name %></span>
       </div>
 

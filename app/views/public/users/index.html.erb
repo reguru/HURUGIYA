@@ -1,8 +1,9 @@
 <div class="my-index">
-  <div class="mypage-image">
+  <div class="top-image">
     <% if @user_posts.present? %>
+      <div style="height:30px"></div>
       <div class="container">
-        <div class="text-center p-5 font-type1 text-white">
+        <div class="text-center p-5 font-type1">
           <h3>投稿一覧</h3>
         </div>
 
@@ -23,8 +24,9 @@
       </div>
 
     <% else %>
-      <div class="mypage-image" style="height: 700px">
-        <div class="text-center p-5 font-type1 text-white">
+      <div class="top-image" style="height: 700px">
+        <div style="height:30px"></div>
+        <div class="text-center p-5 font-type1">
           <h3>投稿一覧</h3>
         </div>
       </div>
