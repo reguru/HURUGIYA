@@ -63,4 +63,8 @@
 
 .quit h6 {
   font-size: 18px;
+  width: 400px;
+  margin: auto;
+  background-color: white;
+  boeder: 1px solid black
 }
