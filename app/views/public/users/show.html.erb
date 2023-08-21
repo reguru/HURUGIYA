@@ -6,20 +6,23 @@
         <h2><%= @user.name %></h2>
       </div>
   
-      <div class="row fav-bg d-flex justify-content-center">
-        <% @user_posts.each do |user_post| %>
-          <div class="shadow-sm fav1">
-            <%= link_to post_path(user_post), class: 'link' do %>
-              <%= image_tag user_post.image[0], class: "my-img" %>
-              <p class="h6 pt-2 px-2 text-dark"><%= user_post.name %></p>
-            <% end %>
-          </div>
-        <% end %>
+      <div class="fav-bg">
+        <div class="row d-flex justify-content-center">
+          <% @user_posts.each do |user_post| %>
+            <div class="shadow-sm fav1">
+              <%= link_to post_path(user_post), class: 'link' do %>
+                <%= image_tag user_post.image[0], class: "my-img" %>
+                <p class="h6 pt-2 px-2 text-dark"><%= user_post.name %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+    
+        <div class="d-flex justify-content-center pt-5">
+          <%= paginate @user_posts %>
+        </div>
       </div>
-  
-      <div class="d-flex justify-content-center pt-5">
-        <%= paginate @user_posts %>
-      </div>
+      <div style="height: 50px"></div>
     </div>
   <% else %>
     <div class="top-image" style="height: 700px">
