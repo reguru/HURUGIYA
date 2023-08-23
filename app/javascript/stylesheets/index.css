@@ -29,6 +29,16 @@
   height: 70px;
 }
 
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.back-img {
+  width: 50px;
+}
+
 @media screen and (max-width: 768px) {
   .post-img {
     width: 120px;
