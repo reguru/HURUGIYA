@@ -68,3 +68,15 @@
   background-color: white;
   boeder: 1px solid black
 }
+
+/*=======================================================================================*/
+/*プレビュー画面*/
+.prev_box_container {
+  display: inline-flex;
+}
+
+.prev_box_container .preview-box {
+  height: 180px;
+  width: 150px;
+  margin: 0 15px 10px 0;
+}

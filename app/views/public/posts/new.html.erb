@@ -20,14 +20,14 @@
 
       <div>
         <%= form_with model: @post, multipart: true do |f| %>
-        <%= render 'public/homes/preview' %>
+        <%= render 'public/posts/preview' %>
         <table class="table table-borderless">
           <tr>
-            <th class="table1"><%= f.label :"古着屋名" %></th>
+            <th class="table1"><%= f.label :"古着屋名" %><span>*</span></th>
             <td><%= f.text_field :name %></td>
           </tr>
           <tr>
-            <th class="table1"><%= f.label :"住所" %></th>
+            <th class="table1"><%= f.label :"住所" %><span>*</span></th>
             <td><%= f.text_field :address %></td>
           </tr>
           <tr>
