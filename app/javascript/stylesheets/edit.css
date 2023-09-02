@@ -72,7 +72,8 @@
 /*=======================================================================================*/
 /*プレビュー画面*/
 .prev_box_container {
-  display: inline-flex;
+  display: flex;
+  overflow: auto;
 }
 
 .prev_box_container .preview-box {

@@ -28,24 +28,22 @@
 
       <div class="my-3">
         <div class="post_drop_box_container">
-          <% if @post.image.attached? %>
-            <div class="prev_box_container">
-              <% @post.image.each do |image| %>
-                <div class="prev-content">
-                  <div class="preview-box">
-                    <div class="img-box" >
-                      <%= image_tag image, alt: "preview" %>
-                    </div>
-                    <div class="under-box">
-                      <div class="delete-box">
-                        <i class="fas fa-trash-alt" style="color: #636974;"></i>
-                      </div>
+          <div class="prev_box_container">
+            <% @post.image.each do |image| %>
+              <div class="prev-content">
+                <div class="preview-box">
+                  <div class="img-box" >
+                    <%= image_tag image, alt: "preview" %>
+                  </div>
+                  <div class="under-box">
+                    <div class="delete-box">
+                      <i class="fas fa-trash-alt" style="color: #636974;"></i>
                     </div>
                   </div>
                 </div>
-              <% end %>
-            </div>
-          <% end %>
+              </div>
+            <% end %>
+          </div>
           <div class="label-content">
             <%= f.label :"image_#{@post.image.length}", class: "label-box", id: "label-box-#{@post.image.length}" do %>
               ファイルを選択

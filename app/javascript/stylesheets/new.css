@@ -68,9 +68,12 @@
 }
 
 .prev-content {
-  margin: 0 0 0 10px;
   display: flex;
   overflow: auto;
+}
+
+.prev-content:first-child {
+  margin: 0 0 0 10px;
 }
 
 .prev-content .preview-box {
