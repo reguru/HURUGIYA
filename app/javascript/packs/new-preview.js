@@ -15,12 +15,13 @@ $(function(){
     return html;
   }
 
+  //posts/:id/editページに遷移した時のアクション=========================
   if (window.location.href.match(/\/posts\/\d+\/edit/)) {
-    var prevContent = $('.label-content').prev();
+    //プレビューにidを追加
     $('.preview-box').each(function(index, box) {
       $(box).attr('id', `preview-box_${index}`);
     })
-
+    //削除ボタンにidを追加
     $('.delete-box').each(function(index, box) {
       $(box).attr('id', `delete_btn_${index}`);
     })
@@ -29,6 +30,7 @@ $(function(){
       $('.label-content').hide();
     }
   }
+  //=====================================================================
 
   function setLabel() {
     //プレビューボックスを取得
