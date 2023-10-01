@@ -15,10 +15,10 @@
             <% if post.get_image.attached? %>
               <%= link_to post_path(post.id), class: "link" do %>
                 <%= image_tag post.image[0], class: "top-img" %>
-                <p class="text-dark mt-3 h5">
+                <p class="post-name">
                   <%= post.name %>
                 </p>
-                <p class="top-int mt-3">
+                <p class="top-int">
                   <%= post.introduction %>
                 </p>
               <% end %>

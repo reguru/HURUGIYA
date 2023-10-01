@@ -41,6 +41,11 @@
   margin: 10px 10px;
 }
 
+.post-name {
+  font-weight: bold;
+  padding: 7px 7px;
+}
+
 @media screen and (max-width: 1024px) {
   .my-img {
     width: 160px;

@@ -50,6 +50,10 @@
   font-weight: bold;
 }
 
+.top .post-name {
+  font-size: 20px;
+}
+
 .top-int {
   overflow: hidden;
   text-overflow: ellipsis;

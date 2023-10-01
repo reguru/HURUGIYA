@@ -13,7 +13,7 @@
           <div class="shadow-sm fav1">
             <%= link_to post_path(post.id), class: 'link' do %>
               <%= image_tag post.image[0], class: "my-img" %>
-              <p class="h6 pt-2 px-2 text-dark"><%= post.name %></p>
+              <p class="post-name"><%= post.name %></p>
             <% end %>
           </div>
           <% end %>
