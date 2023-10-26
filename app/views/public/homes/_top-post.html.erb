@@ -1,0 +1,15 @@
+<% posts.each do |post| %>
+  <div class="top-bg m-3">
+    <% if post.get_image.attached? %>
+      <%= link_to post_path(post.id), class: "link" do %>
+        <%= image_tag post.image[0], class: "top-img" %>
+        <p class="post-name">
+          <%= post.name %>
+        </p>
+        <p class="top-int">
+          <%= post.introduction %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

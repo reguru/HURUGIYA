@@ -1,41 +1,24 @@
 <div class="top-image top">
-  <% if user_signed_in? %>
+  <div style="height:150px;"></div>
+  <div class="start">
+    <%= render "public/homes/start" %>
+  </div>
+
+  <div class="top-tag">
     <div class="container pt-5">
       <h3 class="font-type1 text-center">タグ検索</h3>
       <div class="d-flex flex-row overflow-auto border-bottom">
         <%= render "public/homes/tag" %>
       </div>
     </div>
+  </div>
 
+  <div class="top-post">
     <div class="container py-5">
       <h3 class="font-type1 text-center">最新の投稿</h3>
       <div class="d-flex flex-row overflow-auto">
-        <% @posts.each do |post| %>
-          <div class="top-bg m-3">
-            <% if post.get_image.attached? %>
-              <%= link_to post_path(post.id), class: "link" do %>
-                <%= image_tag post.image[0], class: "top-img" %>
-                <p class="post-name">
-                  <%= post.name %>
-                </p>
-                <p class="top-int">
-                  <%= post.introduction %>
-                </p>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render "public/homes/top-post", posts: @posts %>
       </div>
     </div>
-
-  <% else %>
-    <div style="height:150px;"></div>
-    <div style="height:600px;">
-      <%= render "public/homes/start" %>
-      <div class="mt-5 top-submit">
-        <%= link_to "ログイン",new_user_session_path, class:"btn btn-primary mr-5 submit1" %>
-        <%= link_to "新規登録",new_user_registration_path, class:"btn btn-success submit1" %>
-      </div>
-    </div>
-  <% end %>
+  </div>
 </div>

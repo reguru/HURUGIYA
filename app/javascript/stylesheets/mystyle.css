@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.guest1 {
+  color: #C0C0C0;
+}
+
 .submit1 {
   width: 200px;
   height: 40px;
@@ -77,6 +81,16 @@ footer {
 
 .about-color {
   background-color: white;
+}
+
+.log-text {
+  line-height: 100%;
+  margin-left: 20px;
+}
+
+.guest-link {
+  color: gray !important;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 425px) {

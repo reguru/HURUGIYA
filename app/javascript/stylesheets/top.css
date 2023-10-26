@@ -67,12 +67,37 @@
   color: #aa8f7b;
   font-family: 'Josefin Sans', sans-serif;
   justify-content: center;
+  line-height: 200px;
+}
+
+.title-height {
+  line-height: 50px;
+  transition: all 0.5s;
 }
 
 .top-submit {
   display: flex;
   justify-content: center;
   overflow: hidden;
+}
+
+.top-tag {
+  display: block;
+  overflow: hidden;
+}
+
+.top-post {
+  display: block;
+  overflow: hidden;
+}
+
+.top .container {
+  transform: translate(0%, 105%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s;
+}
+
+.container.visible1 {
+  transform: translate(0, 0);
 }
 
 @media screen and (max-width: 425px) {

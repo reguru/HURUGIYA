@@ -4,7 +4,7 @@
   transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
 }
 
-.title.-visible span {
+.title.visible1 span {
   transform: translate(0, 0);
 }
 

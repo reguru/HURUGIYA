@@ -2,8 +2,9 @@
   <div style="height:100px"></div>
   <div class="box shadow-lg">
     <div class="box-inner">
-      <div class="text-center p-5 font-type1">
-        <h2>会員ログイン</h2>
+      <div class="text-center p-5">
+        <h2 class="font-type1">会員ログイン</h2>
+        <%= link_to 'ゲストログインをする', users_guest_sign_in_path, method: :post, class:'text-dark guest-link' %>
       </div>
 
       <%= form_with model:@user, url: user_session_path do |f| %>
