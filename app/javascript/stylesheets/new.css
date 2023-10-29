@@ -130,7 +130,7 @@
   cursor: pointer;
 }
 
-.hidden-content .hidden-field, .img_field {
+.hidden-content .hidden-field, .img_field, .hidden-checkbox {
   position: absolute;
   width: 1px;
   height: 1px;

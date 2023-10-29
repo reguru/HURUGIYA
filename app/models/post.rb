@@ -16,9 +16,8 @@ class Post < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validate :validate_files
-  #validates :tag_ids, presence: true
 
-  has_many_attached :image
+  has_many_attached :images
 
   def self.looks(word)
     if word
@@ -33,17 +32,17 @@ class Post < ApplicationRecord
   end
 
   def get_image
-    unless image.attached?
+    unless images.attached?
       file_path = Rails.root.join('app/assets/images/default-image.jpg')
-      image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+      images.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
-    image
+    images
   end
 
   private
 
   def validate_files
-    return if image.length <= FILE_NUMBER_LIMIT
+    return if images.length <= FILE_NUMBER_LIMIT
     errors.add(:image, "を添付できる枚数は#{FILE_NUMBER_LIMIT}枚までです。")
   end
 

@@ -84,11 +84,14 @@ $(function(){
     setLabel(count);
     //post_image_${id} から${id}に入った数字のみを抽出
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
+    // const checkbox_id = $('#')
     //取得したidに該当するプレビューを削除
+    // $(checkbox_id).prop('checked', true);
     $(`#preview-box_${id}`).remove();
     console.log("new")
     //フォームの中身を削除
     $(`#post_image_${id}`).val("");
+
 
     //削除時のラベル操作
     var count = $('.preview-box').length;

@@ -29,14 +29,19 @@
       <div class="my-3">
         <div class="post_drop_box_container">
           <div class="prev_box_container">
-            <% @post.image.each do |image| %>
+            <% @post.images.each do |image| %>
+              <div class="hidden-checkbo">
+                <%= f.check_box :image_ids, {multiple: true }, image.id, false %>
+              </div>
               <div class="edit-prev-content">
                 <div class="preview-box">
                   <div class="img-box" >
+                  <label for="post_image_ids_<%= image.id %>">
                     <%= image_tag image, alt: "preview" %>
+                  </label>
                   </div>
                   <div class="under-box">
-                    <div class="delete-box">
+                    <div class="delete-box" >
                       <i class="fas fa-trash-alt" style="color: #636974;"></i>
                     </div>
                   </div>
@@ -45,7 +50,7 @@
             <% end %>
           </div>
           <div class="label-content">
-            <%= f.label :"image_#{@post.image.length}", class: "label-box", id: "label-box-#{@post.image.length}" do %>
+            <%= f.label :"image_#{@post.images.length}", class: "label-box", id: "label-box-#{@post.images.length}" do %>
               ファイルを選択
             <% end %>
           </div>

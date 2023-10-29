@@ -31,7 +31,7 @@
 
       <div class="d-flex flex-row overflow-auto">
         <% if @post.get_image.attached? %>
-          <% @post.image.each do |image| %>
+          <% @post.images.each do |image| %>
             <%= link_to image, "data-lightbox" => image do %>
               <%= image_tag image,class: 'my-4 mr-3 show-img' %>
             <% end %>

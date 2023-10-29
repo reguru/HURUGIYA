@@ -16,7 +16,7 @@ $(function() {
     $('.title').addClass('title-height');
     $('.top-tag .container').addClass(CLASSNAME);
   }, 2500);
-  
+
   setTimeout(() => {
     $('.top-post .container').addClass(CLASSNAME);
   }, 2700);
@@ -25,7 +25,17 @@ $(function() {
 
 /*ページトップ*/
 $(function() {
-  $('#back a').on('click', function(event){
+  const $topBtn = $('#back a');
+  $topBtn.hide();
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 100) {
+      $topBtn.fadeIn(1000);
+    } else {
+      $topBtn.fadeOut();
+    }
+  });
+
+  $topBtn.on('click', function(event){
     $('body, html').animate({
       scrollTop:0
     }, 800);

@@ -2,7 +2,7 @@
   <div class="top-bg m-3">
     <% if post.get_image.attached? %>
       <%= link_to post_path(post.id), class: "link" do %>
-        <%= image_tag post.image[0], class: "top-img" %>
+        <%= image_tag post.images[0], class: "top-img" %>
         <p class="post-name">
           <%= post.name %>
         </p>
