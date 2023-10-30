@@ -32,14 +32,8 @@ $(function(){
   }
   //=====================================================================
 
-  function setLabel() {
-    //プレビューボックスを取得
-    var prevContent = $('.label-content').prev();
-  }
-
   // プレビューの追加
   $(document).on('change', '.hidden-field', function() {
-    setLabel();
     //hidden-fieldのidの数値のみ取得
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
     //labelボックスのidとforを更新
@@ -67,9 +61,6 @@ $(function(){
       if (count == 10) {
         $('.label-content').hide();
       }
-
-      //ラベルのwidth操作
-      setLabel();
       //ラベルのidとforの値を変更
       if(count < 10){
         //プレビューの数でラベルのオプションを更新する
@@ -80,15 +71,14 @@ $(function(){
 
   // 画像の削除
   $(document).on('click', '.delete-box', function() {
-    var count = $('.preview-box').length;
-    setLabel(count);
-    //post_image_${id} から${id}に入った数字のみを抽出
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
-    // const checkbox_id = $('#')
+
+    const imageId = $(`#post_image_${id}`).attr('id');
+    console.log(imageId);
+    $(`#post_image_ids_${imageId}`).prop('checked', true);
+
     //取得したidに該当するプレビューを削除
-    // $(checkbox_id).prop('checked', true);
     $(`#preview-box_${id}`).remove();
-    console.log("new")
     //フォームの中身を削除
     $(`#post_image_${id}`).val("");
 
@@ -99,7 +89,6 @@ $(function(){
     if (count == 9) {
       $('.label-content').show();
     }
-    setLabel(count);
 
     if(id < 10){
       //削除された際に、空っぽになったfile_fieldをもう一度入力可能にする
