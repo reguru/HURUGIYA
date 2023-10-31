@@ -25,6 +25,9 @@ $(function(){
     $('.delete-box').each(function(index, box) {
       $(box).attr('id', `delete_btn_${index}`);
     })
+    $('.image_id').each(function(index, box) {
+      $(box).attr('id', `edit_image_${index}`);
+    })
     var count = $('.preview-box').length;
     if (count == 10) {
       $('.label-content').hide();
@@ -36,6 +39,8 @@ $(function(){
   $(document).on('change', '.hidden-field', function() {
     //hidden-fieldのidの数値のみ取得
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
+    //blobのimage_idを取得
+    const imageId = $(`#edit_image_${id}`).text().replace(/\s+/g,'');
     //labelボックスのidとforを更新
     $('.label-box').attr({id: `label-box-${id}`,for: `post_image_${id}`});
     //選択したfileのオブジェクトを取得
@@ -66,15 +71,19 @@ $(function(){
         //プレビューの数でラベルのオプションを更新する
         $('.label-box').attr({id: `label-box-${count}`,for: `post_image_${count}`});
       }
+
+      // if($(`#post_image_ids_${imageId}`)) {
+      //   $(`#post_image_ids_${imageId}`).prop('checked', false);
+      // }
     }
   });
 
-  // 画像の削除
+  //画像の削除
   $(document).on('click', '.delete-box', function() {
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
 
-    const imageId = $(`#post_image_${id}`).attr('id');
-    console.log(imageId);
+    //チェックボックスにチェックをつける
+    const imageId = $(`#edit_image_${id}`).text().replace(/\s+/g,'');
     $(`#post_image_ids_${imageId}`).prop('checked', true);
 
     //取得したidに該当するプレビューを削除

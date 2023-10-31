@@ -30,8 +30,11 @@
         <div class="post_drop_box_container">
           <div class="prev_box_container">
             <% @post.images.each do |image| %>
-              <div class="hidden-checkbo">
+              <div class="hidden-checkbox">
                 <%= f.check_box :image_ids, {multiple: true }, image.id, false %>
+                <div class="image_id">
+                  <%= image.id %>
+                </div>
               </div>
               <div class="edit-prev-content">
                 <div class="preview-box">
