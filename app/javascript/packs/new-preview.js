@@ -39,10 +39,6 @@ $(function(){
   $(document).on('change', '.hidden-field', function() {
     //hidden-fieldのidの数値のみ取得
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
-    //blobのimage_idを取得
-    const imageId = $(`#edit_image_${id}`).text().replace(/\s+/g,'');
-    //labelボックスのidとforを更新
-    $('.label-box').attr({id: `label-box-${id}`,for: `post_image_${id}`});
     //選択したfileのオブジェクトを取得
     var file = this.files[0];
     var reader = new FileReader();
@@ -68,14 +64,15 @@ $(function(){
       }
       //ラベルのidとforの値を変更
       if(count < 10){
-        //プレビューの数でラベルのオプションを更新する
-        $('.label-box').attr({id: `label-box-${count}`,for: `post_image_${count}`});
+        //プレビューの数でラベルのオプションを更新
+        // $('.label-box').attr({id: `label-box-${count}`,for: `post_image_${count}`});
+        
       }
 
       // if($(`#post_image_ids_${imageId}`)) {
       //   $(`#post_image_ids_${imageId}`).prop('checked', false);
       // }
-    }
+    };
   });
 
   //画像の削除
