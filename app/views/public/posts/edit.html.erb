@@ -39,9 +39,7 @@
               <div class="edit-prev-content">
                 <div class="preview-box">
                   <div class="img-box" >
-                  <label for="post_image_ids_<%= image.id %>">
                     <%= image_tag image, alt: "preview" %>
-                  </label>
                   </div>
                   <div class="under-box">
                     <div class="delete-box" >
@@ -57,9 +55,7 @@
               ファイルを選択
             <% end %>
           </div>
-          <div class="hidden-content">
-            <%= render 'edit-preview' %>
-          </div>
+          <%= render 'public/posts/preview' %>
         </div>
       </div>
 

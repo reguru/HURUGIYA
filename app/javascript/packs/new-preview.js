@@ -25,17 +25,37 @@ $(function(){
     $('.delete-box').each(function(index, box) {
       $(box).attr('id', `delete_btn_${index}`);
     })
+    //blob image_idにidをつける
     $('.image_id').each(function(index, box) {
       $(box).attr('id', `edit_image_${index}`);
     })
+
     var count = $('.preview-box').length;
+    const hiddenId = document.getElementById('post_hidden');
+    const checkbox = hiddenId.querySelectorAll('input[name="pre_checkbox"]');
+    
+    //画像有無チェックボックスにチェックをつける
+    for(let a = 0; a < count; a++){
+      checkbox[a].checked = true;
+    }
+
     if (count == 10) {
       $('.label-content').hide();
+    }
+
+    if(count < 10){
+      //チェックの入っていないラベルの最初を取得
+      for(let i = 0; i < checkbox.length; i++){
+        if(checkbox[i].checked === false){
+          $('.label-box').attr({id: `label-box-${i}`,for: `post_image_${i}`});
+          break;
+        }
+      }
     }
   }
   //=====================================================================
 
-  // プレビューの追加
+  // プレビューの追加 ===================================================
   $(document).on('change', '.hidden-field', function() {
     //hidden-fieldのidの数値のみ取得
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
@@ -57,6 +77,10 @@ $(function(){
       }
       //イメージを追加
       $(`#preview-box_${id} img`).attr('src', `${image}`);
+
+      //画像有無チェックボックスにチェックを入れる
+      $(`#checkbox_${id}`).prop('checked', true);
+
       var count = $('.preview-box').length;
       //プレビューが10個あったらラベルを隠す
       if (count == 10) {
@@ -64,24 +88,31 @@ $(function(){
       }
       //ラベルのidとforの値を変更
       if(count < 10){
-        //プレビューの数でラベルのオプションを更新
-        // $('.label-box').attr({id: `label-box-${count}`,for: `post_image_${count}`});
-        
-      }
+        //チェックの入っていないラベルの最初を取得
+        const hiddenId = document.getElementById('post_hidden');
+        const checkbox = hiddenId.querySelectorAll('input[name="pre_checkbox"]');
 
-      // if($(`#post_image_ids_${imageId}`)) {
-      //   $(`#post_image_ids_${imageId}`).prop('checked', false);
-      // }
+        for (let i = 0; i < checkbox.length; i++){
+          if(checkbox[i].checked === false){
+            $('.label-box').attr({id: `label-box-${i}`,for: `post_image_${i}`});
+            break;
+          }
+        }
+      }
     };
   });
+  //=====================================================================
 
-  //画像の削除
+  //画像の削除 ==========================================================
   $(document).on('click', '.delete-box', function() {
     var id = $(this).attr('id').replace(/[^0-9]/g, '');
 
-    //チェックボックスにチェックをつける
+    //blobチェックボックスにチェックをつける
     const imageId = $(`#edit_image_${id}`).text().replace(/\s+/g,'');
     $(`#post_image_ids_${imageId}`).prop('checked', true);
+
+    //画像有無チェックボックスのチェックを外す
+    $(`#checkbox_${id}`).prop('checked', false);
 
     //取得したidに該当するプレビューを削除
     $(`#preview-box_${id}`).remove();
@@ -100,6 +131,6 @@ $(function(){
       //削除された際に、空っぽになったfile_fieldをもう一度入力可能にする
       $('.label-box').attr({id: `label-box-${id}`,for: `post_image_${id}`});
     }
-
   });
+  //=====================================================================
 });
