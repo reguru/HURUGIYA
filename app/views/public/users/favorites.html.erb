@@ -12,7 +12,7 @@
           <% @favorite_posts.each do |post| %>
           <div class="shadow-sm fav1">
             <%= link_to post_path(post.id), class: 'link' do %>
-              <%= image_tag post.image[0], class: "my-img" %>
+              <%= image_tag post.get_image[0], class: "my-img" %>
               <p class="post-name"><%= post.name %></p>
             <% end %>
           </div>

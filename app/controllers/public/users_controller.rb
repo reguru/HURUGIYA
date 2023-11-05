@@ -33,13 +33,13 @@ class Public::UsersController < ApplicationController
   end
 
   def index
-    @user_posts = current_user.posts.page(params[:page])
+    @user_posts = current_user.posts.order(created_at: :desc).page(params[:page])
   end
 
   def favorites
     @user = User.find(params[:id])
     favorited_post_ids = @user.favorites.pluck(:post_id)
-    @favorite_posts = Post.where(id: favorited_post_ids).page(params[:page])
+    @favorite_posts = Post.where(id: favorited_post_ids).order(created_at: :desc).page(params[:page])
     unless @user == current_user
       redirect_to root_path, notice: "他のユーザーのいいね一覧は閲覧できません。"
     end
