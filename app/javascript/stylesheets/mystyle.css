@@ -79,8 +79,16 @@ footer {
   background-color: #eee;
 }
 
-.about-color {
-  background-color: white;
+.about-box {
+  text-align: center;
+  padding: 150px 0 50px 0;
+  line-height: 30px
+}
+
+.about-text {
+  color: #aa8f7b;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .log-text {
@@ -97,5 +105,13 @@ footer {
   .font-title {
     font-size: 23px;
     margin-left: 10px;
+  }
+  
+  .about-box {
+    margin: 0 30px;
+  }
+  
+  .about-text {
+    font-size: 15px;
   }
 }
