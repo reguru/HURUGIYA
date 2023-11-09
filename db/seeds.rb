@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Admin.find_or_create_by!(email: "admin@example.jp") do |admin|
-  admin.password = "Admin6789"
+Admin.find_or_create_by!(email: ENV['ADMIN_EMAIL']) do |admin|
+  admin.password = ENV['ADMIN_PASSWORD']
 end
 
 tag = [
@@ -56,7 +56,8 @@ lucas = User.find_or_create_by!(email: "lucas@test.com") do |user|
 end
 
 
-post1 = Post.find_or_create_by!(name: "JUNGLE") do |post|
+Post.find_or_create_by!(name: "JUNGLE") do |post|
+  post.images.attach(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg")
   post.introduction = "大人気の古着屋です。休日にはたくさんのお客さんが店に入っていきます。"
   post.user = olivia
   post.address = "愛知県名古屋市中村区名駅1丁目1-4"
@@ -64,7 +65,8 @@ post1 = Post.find_or_create_by!(name: "JUNGLE") do |post|
   post.longitude = "40.4167"
 end
 
-post2 = Post.find_or_create_by!(name: "バイキング") do |post|
+Post.find_or_create_by!(name: "バイキング") do |post|
+  post.images.attach(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg")
   post.introduction = "東京都にある古着屋です。少しわかりにくいところにありますが、様々な古着がおいてあり、定員さんもとても話しやすい方です。"
   post.user = james
   post.address = "東京都千代田区丸の内1丁目"
@@ -72,14 +74,11 @@ post2 = Post.find_or_create_by!(name: "バイキング") do |post|
   post.longitude = "24.2867"
 end
 
-post3 = Post.find_or_create_by!(name: "Underwood") do |post|
+Post.find_or_create_by!(name: "Underwood") do |post|
+  post.images.attach(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg")
   post.introduction = "ヨーロッパ古着好きな方にオススメ！とても多くのヨーロッパ古着が置いてあります！ぜひ行ってみてください！ 店内もとても雰囲気がよく、店員さんも良い人なのでとても居心地がいいです。 行ったら毎回いいものが置いてあり、毎回買ってしまいます。それほどいいです！"
   post.user = lucas
   post.address = "神奈川県横浜市西区高島2丁目"
   post.latitude = "-74.0059"
   post.longitude = "40.7127"
 end
-
-post1.images.attach(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg")
-post2.images.attach(io: File.open("#{Rails.root}/db/fixtures/sample-post2.jpg"), filename:"sample-post2.jpg")
-post3.images.attach(io: File.open("#{Rails.root}/db/fixtures/sample-post3.jpg"), filename:"sample-post3.jpg")
