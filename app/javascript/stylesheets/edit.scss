@@ -17,11 +17,15 @@
 
 .tag-list {
   border-top: 2px #eee solid;
-}
-
-.tag-list p {
-  font-size: 20px;
-  margin: 20px 0;
+  
+  p {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  
+  .tag-list-item {
+    padding: 5px 25px;
+  }
 }
 
 .tag-list-item {
@@ -33,9 +37,6 @@
   border-radius: 8px;
 }
 
-.tag-list .tag-list-item {
-  padding: 5px 25px;
-}
 
 #post_introduction {
   width: 100%;
@@ -74,12 +75,12 @@
 .prev_box_container {
   display: flex;
   overflow: auto;
-}
-
-.prev_box_container .preview-box {
-  height: 180px;
-  width: 150px;
-  margin: 0 15px 10px 0;
+  
+  .preview-box {
+    height: 180px;
+    width: 150px;
+    margin: 0 15px 10px 0;
+  }
 }
 
 .edit-prev-content:first-child {

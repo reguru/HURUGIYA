@@ -21,12 +21,14 @@
   padding: 10px;
 }
 
-.tag-list .col-md-9 {
-  padding-right: 3px;
-}
-
-.tag-list .col-md-3 {
-  padding-left: 0px;
+.tag-list {
+  .col-md-9 {
+    padding-right: 3px;
+  }
+  
+  .col-md-3 {
+    padding-left: 0px;
+  }
 }
 
 .show-bg {
@@ -53,19 +55,21 @@
     margin-left: 15px;
   }
 
-  .show .h5 {
-    font-size: 15px;
-  }
-
-  .show .heart {
-    width: 25px !important;
-  }
-
-  .show .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
-    width: 20px;
-  }
-
-  .show .p-name {
-    margin-right: 0px;
+  .show {
+    .h5 {
+      font-size: 15px;
+    }
+    
+    .heart {
+      width: 25px !important;
+    }
+  
+    .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
+      width: 20px;
+    }
+  
+    .p-name {
+      margin-right: 0px;
+    }
   }
 }

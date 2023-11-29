@@ -50,8 +50,16 @@
   font-weight: bold;
 }
 
-.top .post-name {
-  font-size: 20px;
+.top {
+  .post-name {
+    font-size: 20px;
+  }
+  
+  .container {
+    transform: translate(0%, 105%);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s;
+  }
+
 }
 
 .top-int {
@@ -91,11 +99,6 @@
   overflow: hidden;
 }
 
-.top .container {
-  transform: translate(0%, 105%);
-  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s;
-}
-
 .container.visible1 {
   transform: translate(0, 0);
 }
@@ -113,12 +116,15 @@
     font-size: 24px;
   }
 
-  .about p, li{
-    font-size: 15px;
-  }
+  .about {
+    p, li{
+      font-size: 15px;
+    }
+    
+    h3 {
+      font-size: 24px;
+    }
 
-  .about h3 {
-    font-size: 24px;
   }
 
   .title {

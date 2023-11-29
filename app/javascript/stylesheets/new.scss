@@ -70,17 +70,18 @@
 .prev-content {
   display: flex;
   overflow: auto;
+  
+  &:first-child {
+    margin: 0 0 0 10px;
+  }
+  
+  .preview-box {
+    height: 180px;
+    width: 150px;
+    margin: 0 15px 10px 0;
+  }
 }
 
-.prev-content:first-child {
-  margin: 0 0 0 10px;
-}
-
-.prev-content .preview-box {
-  height: 180px;
-  width: 150px;
-  margin: 0 15px 10px 0;
-}
 
 .preview-box .img-box {
   height: 150px;
@@ -97,37 +98,38 @@
 .under-box {
   display: flex;
   justify-content: center;
+  
+  .delete-box {
+    width: 100%;
+    height: 25px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: solid 1px #555;
+  }
 }
 
-.under-box .delete-box {
-  width: 100%;
-  height: 25px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: solid 1px #555;
-}
 
 /*投稿エリア*/
 .label-content {
   margin: 10px auto;
   text-align: center;
-}
-
-.label-content label {
-  position: relative;
-  background-color: royalblue;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.21);
-  border: solid 1px royalblue;
-  border-radius: 100px;
-  font-weight: bold;
-  font-size: 15px;
-  color: #fff;
-  transition: all ease-in-out 0.1s;
-  cursor: pointer;
+  
+  label {
+    position: relative;
+    background-color: royalblue;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.21);
+    border: solid 1px royalblue;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    transition: all ease-in-out 0.1s;
+    cursor: pointer;
+  }
 }
 
 .hidden-content .hidden-field, .img_field, .hidden-checkbox {
