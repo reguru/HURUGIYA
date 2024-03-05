@@ -1,91 +1,91 @@
 <div class="top-image show">
-  <div class="show-bg">
-    <div class="container pt-5">
-      <div class="d-flex justify-content-end">
-        <% if @post.user == current_user %>
-          <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
-        <% end %>
-      </div>
+  <div style="height:20px"></div>
+  <div class="container show-bg pt-5">
+    <div class="d-flex justify-content-end">
+      <% if @post.user == current_user %>
+        <%= link_to "編集する",edit_post_path(@post.id), class: 'btn btn-success' %>
+      <% end %>
+    </div>
 
-      <div class="mb-3">
-        <%= link_to user_path(@post.user_id), class: 'text-dark' do %>
-          <%= image_tag @post.user.get_profile_image, class: 'rounded-circle', size: "40x40" %>
-          <span class="font1 ml-2"><%= @post.user.name %></span>
-        <% end %>
+    <div class="mb-3">
+      <%= link_to user_path(@post.user_id), class: 'text-dark' do %>
+        <%= image_tag @post.user.get_profile_image, class: 'rounded-circle', size: "40x40" %>
+        <span class="font1 ml-2"><%= @post.user.name %></span>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="snslink col-md-10 col-sm-9 col-8">
+        <h2 class="p-name"><%= @post.name %></h2>
+        <%= render "public/posts/sns", post: @post %>
       </div>
-      <div class="row">
-        <div class="snslink col-md-10 col-sm-9 col-8">
-          <h2 class="p-name"><%= @post.name %></h2>
-          <%= render "public/posts/sns", post: @post %>
-        </div>
-        <div class="col-md-2 col-sm-3 col-4" >
-          <%= render "public/favorites/favorite", post: @post %>
-        </div>
+      <div class="col-md-2 col-sm-3 col-4" >
+        <%= render "public/favorites/favorite", post: @post %>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-8 h5">
-          <%= @post.address %>
-        </div>
+    <div class="row">
+      <div class="col-md-8 h5">
+        <%= @post.address %>
       </div>
+    </div>
 
-      <div class="d-flex flex-row overflow-auto">
-        <% if @post.get_image.attached? %>
-          <% @post.images.each do |image| %>
-            <%= link_to image, "data-lightbox" => image do %>
-              <%= image_tag image,class: 'my-4 mr-3 show-img' %>
-            <% end %>
+    <div class="d-flex flex-row overflow-auto">
+      <% if @post.get_image.attached? %>
+        <% @post.images.each do |image| %>
+          <%= link_to image, "data-lightbox" => image do %>
+            <%= image_tag image,class: 'my-4 mr-3 show-img' %>
           <% end %>
         <% end %>
-      </div>
-
-      <div class="my-4 ">
-        <div class="font1">
-          <%= @post.introduction %>
-        </div>
-      </div>
-
-      <div class="row tag-list">
-        <div class="col-md-9">
-          <div>
-            <p>~系統~</p>
-            <ul>
-              <% @post.tags.each do |tag| %>
-                <li class="tag-list-item"><%= tag.name %></li>
-              <% end %>
-            </ul>
-          </div>
-
-          <div class="my-4">
-            <p>~店の雰囲気~</p>
-            <ul>
-              <% @post.shop_tags.each do |shop_tag| %>
-                <li class="tag-list-item"><%= shop_tag.name %></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-
-        <div class="s-map col-md-3 mb-3">
-          <p>~マップ~</p>
-          <%= render 'public/posts/map', post: @post %>
-        </div>
-      </div>
-
-      <div class="ml-2">
-        <div class="show-border mb-4"></div>
-        <%= image_tag current_user.get_profile_image, class: 'rounded-circle', size: "40x40" %>
-        <span class="font1 ml-3"><%= current_user.name %></span>
-      </div>
-
-      <div class="mt-3 ml-2">
-        <%= render "public/comments/form", post: @post, comment: @comment %>
-      </div>
-
-      <div class="mt-2 flex-column comment-btn">
-        <%= render "public/comments/index", post: @post %>
-      </div>
-      <div style="height:80px"></div>
+      <% end %>
     </div>
+
+    <div class="my-4 ">
+      <div class="font1">
+        <%= @post.introduction %>
+      </div>
+    </div>
+
+    <div class="row tag-list">
+      <div class="col-md-9">
+        <div>
+          <p>~系統~</p>
+          <ul>
+            <% @post.tags.each do |tag| %>
+              <li class="tag-list-item"><%= tag.name %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="my-4">
+          <p>~店の雰囲気~</p>
+          <ul>
+            <% @post.shop_tags.each do |shop_tag| %>
+              <li class="tag-list-item"><%= shop_tag.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="s-map col-md-3 mb-3">
+        <p>~マップ~</p>
+        <%= render 'public/posts/map', post: @post %>
+      </div>
+    </div>
+
+    <div class="ml-2">
+      <div class="show-border mb-4"></div>
+      <%= image_tag current_user.get_profile_image, class: 'rounded-circle', size: "40x40" %>
+      <span class="font1 ml-3"><%= current_user.name %></span>
+    </div>
+
+    <div class="mt-3 ml-2">
+      <%= render "public/comments/form", post: @post, comment: @comment %>
+    </div>
+
+    <div class="mt-2 flex-column comment-btn">
+      <%= render "public/comments/index", post: @post %>
+    </div>
+    <div style="height:80px"></div>
   </div>
+  <div style="height:20px"></div>
 </div>

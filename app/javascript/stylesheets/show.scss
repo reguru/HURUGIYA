@@ -25,17 +25,16 @@
   .col-md-9 {
     padding-right: 3px;
   }
-  
+
   .col-md-3 {
     padding-left: 0px;
   }
 }
 
 .show-bg {
-  background-color: white;
-  width: 80%;
+  background-color: #fff;
   margin: 0 auto;
-  box-sizing: border-box;
+  border: 3px #444 solid;
 }
 
 @media screen and (max-width: 425px) {
@@ -59,15 +58,15 @@
     .h5 {
       font-size: 15px;
     }
-    
+
     .heart {
       width: 25px !important;
     }
-  
+
     .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
       width: 20px;
     }
-  
+
     .p-name {
       margin-right: 0px;
     }
